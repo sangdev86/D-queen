@@ -1,0 +1,93 @@
+html[data-theme='one'] {
+  --color-primary: rgb(0, 162, 255);
+  --color-primary-light: rgb(126, 213, 111);
+  --color-primary-dark: rgb(40, 180, 133);
+
+  --color-secondary-light: #ffb900;
+  --color-secondary-dark: #ff7730;
+
+  --color-grey-light: rgb(228, 228, 228);
+  --color-grey-light-3: rgba(228, 228, 228, 0.3);
+  --color-grey-light-8: rgba(228, 228, 228, 0.8);
+
+  --color-grey-dark: #777;
+
+  --color-white: #ffffff;
+  --color-black: #000;
+  --banner: url(../../image/bg-spring.png);
+
+  // variable
+  // input
+  --color-border-input: var(--color-grey-light-3);
+  --bg-input: rgb(247, 247, 247);
+  // text
+  --color-text-black: #515151;
+
+  --color-hover-border-bottom: var(--color-primary);
+  --color-border-bottom: var(--color-grey-light);
+
+  --bg-white: var(--color-white);
+}
+
+html[data-theme='two'] {
+  --color-primary: #55c57a;
+  --color-primary-light: #7ed56f;
+  --color-primary-dark: #28b485;
+
+  --color-secondary-light: #ffb900;
+  --color-secondary-dark: #ff7730;
+
+  --color-grey-light-1: #f7f7f7;
+  --color-grey-light-2: #eee;
+
+  --color-grey-dark: #777;
+  --color-grey-dark-2: #999;
+  --color-grey-dark-3: #333;
+
+  --color-white: #fff;
+  --color-black: #000;
+  --banner: url(../../image/bg-spring.png);
+}
+
+@mixin theme($i) {
+  @if ($i == 1) {
+    --color-primary: #55c57a;
+    --color-primary-light: #7ed56f;
+    --color-primary-dark: #28b485;
+
+    --color-secondary-light: #ffb900;
+    --color-secondary-dark: #ff7730;
+
+    --color-grey-light-1: #f7f7f7;
+    --color-grey-light-2: #eee;
+
+    --color-grey-dark: #777;
+    --color-grey-dark-2: #999;
+    --color-grey-dark-3: #333;
+
+    --color-white: #fff;
+    --color-black: #000;
+  } @else if($i == 2) {
+    --color-primary: #55c57a;
+    --color-primary-light: #7ed56f;
+    --color-primary-dark: #28b485;
+
+    --color-secondary-light: #ffb900;
+    --color-secondary-dark: #ff7730;
+
+    --color-grey-light-1: #f7f7f7;
+    --color-grey-light-2: #eee;
+
+    --color-grey-dark: #777;
+    --color-grey-dark-2: #999;
+    --color-grey-dark-3: #333;
+
+    --color-white: #fff;
+    --color-black: #000;
+  }
+}
+@for $i from 1 through 6 {
+  .theme-#{$i} {
+    @include theme($i);
+  }
+}

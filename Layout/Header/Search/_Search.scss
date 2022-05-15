@@ -1,0 +1,15 @@
+#search {
+  position: relative;
+  margin-right: 20px;
+  .search {
+    width: 270px;
+  }
+
+  .search-icon {
+    font-size: 1.6rem;
+    color: var(--color-text-black);
+    position: absolute;
+    top: 4px;
+    right: 12px;
+  }
+}
