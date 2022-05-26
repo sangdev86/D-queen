@@ -15,7 +15,10 @@ export default function Header() {
             <Navigation />
           </div>
           <div className="header-logo">
-            <Image src="/image/logo.png" width={90} height={40} />
+            <img
+              src="/image/logo-primary-dark.png"
+              alt="Dược Mỹ Thiên Nhiên D'Queen cùng Akariphan"
+            />
           </div>
           <div className="header-right">
             <div className="header-search">

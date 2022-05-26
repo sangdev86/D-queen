@@ -1,0 +1,43 @@
+#banner {
+  height: 500px;
+  width: 100%;
+  background-color: var(--color-primary-light);
+  position: relative;
+  .banner-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    @include absCenter;
+
+    .banner-item {
+      h1 {
+        font-size: 3rem;
+        line-height: 4.5rem;
+        span {
+          font-size: 4rem;
+          color: var(--color-primary-dark);
+        }
+      }
+      h2 {
+        font-size: 1.8rem;
+        margin: 10px 0 20px;
+        width: 90%;
+      }
+      span {
+        margin-top: 100px;
+      }
+    }
+    .banner-left {
+      display: flex;
+      justify-content: flex-end;
+      width: 35%;
+    }
+    .banner-right {
+      img {
+        border-radius: 10px;
+      }
+    }
+  }
+}

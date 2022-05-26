@@ -1,0 +1,11 @@
+#customers {
+  .customers-wrapper {
+    display: flex;
+    justify-content: space-around;
+    .customers-item {
+      h4 {
+        font-size: 1;
+      }
+    }
+  }
+}

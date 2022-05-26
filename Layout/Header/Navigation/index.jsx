@@ -7,6 +7,7 @@ export default function Navigation() {
       <ul className="navigation-wrapper">
         {[
           { title: 'Trang chủ', href: '/' },
+          { title: "Về D'Queen", href: '/about' },
           { title: 'Sản Phẩm', href: '/products' },
           { title: 'Góc làm đẹp', href: '/make-beauty' },
           { title: 'Đại lý', href: '/dealer' }

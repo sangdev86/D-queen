@@ -1,5 +1,11 @@
 //Layout
 @import '/Layout/Layout';
+//Features
+@import '/Features/Features';
 
-//component comment
+// component
+@import '/components/Component';
+
+//component small
 @import './input';
+@import './button';

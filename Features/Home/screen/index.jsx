@@ -1,11 +1,16 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { ACTIONS } from '../../../components/reducer/actions';
-import Categories from './Categories';
-import Envents from './Envents';
+
+import Event from './Event';
+import Introduce from './Introduce';
 
 export default function Home() {
   const dispatch = useDispatch();
 
-  return <div id="home">Content</div>;
+  return (
+    <div id="home">
+      <Event />
+      <Introduce />
+    </div>
+  );
 }
