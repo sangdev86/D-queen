@@ -1,28 +1,38 @@
 #carousel {
   position: relative;
   padding: 2rem 0;
-
+  transition: 0.5 ease-in-out;
+  &:hover {
+    .arrow {
+      opacity: 0.5;
+    }
+  }
   // display: flex;
   .arrow {
     width: 10%;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
     cursor: pointer;
+    opacity: 0;
 
     .arrow-detail {
-      cursor: pointer;
-      font-size: 3rem;
+      border-radius: 50%;
+      padding: 1rem;
+      height: 4rem;
+      width: 4rem;
+
+      background-color: var(--color-grey-light);
     }
   }
-
   .left-arrow {
-    @include position(50%, 0%);
+    @include position(0%, -10%);
+    justify-content: flex-end;
   }
 
   .right-arrow {
-    @include position(50%, 100%);
+    @include position(0%, 110%);
+    justify-content: flex-start;
   }
 
   .style {
@@ -56,6 +66,22 @@
   .style-4 {
     .wrapper-carousel-item {
       min-width: 25%;
+    }
+  }
+  .carousel-navigation {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .navigation-item {
+      padding: 5px;
+      border-radius: 50%;
+      margin: 4px;
+      border: 1px solid var(--color-primary-dark);
+      cursor: pointer;
+    }
+    .active {
+      background-color: var(--color-primary-dark);
     }
   }
 }

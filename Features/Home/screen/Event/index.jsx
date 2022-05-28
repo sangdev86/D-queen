@@ -187,7 +187,7 @@ export default function Event() {
           </div>
         </div>
         <div className="bottom-content">
-          <Carousel show={4} length={api.length}>
+          <Carousel show={4} length={api.length} infinityTime={5000}>
             <Fragment key="item">
               {api.map((card, index) => (
                 <Fragment key={index}>

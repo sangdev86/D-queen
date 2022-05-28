@@ -47,9 +47,7 @@ export default function Introduce() {
             </div>
 
             <div className="product-img introduce-item">
-              <div className="img-wrapper">
-                <img src="/image/introduce/product-1.png" />
-              </div>
+              <img src="/image/introduce/product-1.png" />
             </div>
           </div>
         </div>
