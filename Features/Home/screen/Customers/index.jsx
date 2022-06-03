@@ -7,52 +7,47 @@ export default function Customers() {
     data: [
       {
         classNameChild: 'feedback-carousel-item',
-        src: '/image/feedback/0.png',
+        src: '/image/customers/1.png',
         alt: "Review sản phẩm D'Queen"
       },
       {
         classNameChild: 'feedback-carousel-item',
-        src: '/image/feedback/1.png',
+        src: '/image/customers/2.png',
         alt: "Review sản phẩm D'Queen"
       },
       {
         classNameChild: 'feedback-carousel-item',
-        src: '/image/feedback/2.png',
+        src: '/image/customers/3.png',
         alt: "Review sản phẩm D'Queen"
       },
       {
         classNameChild: 'feedback-carousel-item',
-        src: '/image/feedback/3.png',
+        src: '/image/customers/4.png',
         alt: "Review sản phẩm D'Queen"
       },
       {
         classNameChild: 'feedback-carousel-item',
-        src: '/image/feedback/4.png',
+        src: '/image/customers/5.png',
         alt: "Review sản phẩm D'Queen"
       },
       {
         classNameChild: 'feedback-carousel-item',
-        src: '/image/feedback/5.png',
+        src: '/image/customers/6.png',
         alt: "Review sản phẩm D'Queen"
       },
       {
         classNameChild: 'feedback-carousel-item',
-        src: '/image/feedback/6.png',
+        src: '/image/customers/7.png',
         alt: "Review sản phẩm D'Queen"
       },
       {
         classNameChild: 'feedback-carousel-item',
-        src: '/image/feedback/7.png',
+        src: '/image/customers/8.png',
         alt: "Review sản phẩm D'Queen"
       },
       {
         classNameChild: 'feedback-carousel-item',
-        src: '/image/feedback/8.png',
-        alt: "Review sản phẩm D'Queen"
-      },
-      {
-        classNameChild: 'feedback-carousel-item',
-        src: '/image/feedback/9.png',
+        src: '/image/customers/10.png',
         alt: "Review sản phẩm D'Queen"
       }
     ]
@@ -63,31 +58,32 @@ export default function Customers() {
         <div className="feed-back-wrapper">
           <div className="left">
             <h2>
-              Khách hàng là
+              Sản phẩm
+              <br />
+              D'Queen có mặt tại
               <br />
               <span>Spa làm đẹp </span>
               <br />
-              <span> & người tiêu dùng </span>
+              {/* <span>& người tiêu dùng nhỏ lẻ</span> */}
             </h2>
             {/* <h2>
               Phản hồi từ <br />
               <span> khách hàng</span>
             </h2> */}
             <p>
-              D'Queen tự hào tạo ra sản phẩm chất lượng làm hài lòng
-              nhiều khách hàng. Bởi vì chúng tôi đã phải dày công thử
-              nghiệm rất nhiều công thức khi có kết quả khả quan và
-              thực tế đó là lúc chúng tôi công bố sản phẩm.
+              D'Queen tự hào tạo ra sản phẩm giữ trọn niềm tin không
+              chỉ ở những khách hàng nhỏ lẻ mà còn ở các cơ sở trung
+              tâm làm đẹp Spa.
             </p>
             <div className="extend">
-              <span className="button-primary">Xem thêm</span>
+              <span className="button-primary">Sản Phẩm</span>
             </div>
           </div>
           <div className="right">
             <Carousel
               show={2}
               length={feedbackData.data.length}
-              style={'w-40'}
+              // style={'w-40'}
               infinityTime={4000}
             >
               <Fragment key="item">
