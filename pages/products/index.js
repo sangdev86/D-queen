@@ -1,5 +1,10 @@
 import React from 'react';
+import ProductsPage from '../../Features/ProductsPage/screen';
 
 export default function Products() {
-  return <div>Product</div>;
+  return (
+    <div>
+      <ProductsPage />
+    </div>
+  );
 }

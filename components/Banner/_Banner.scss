@@ -1,5 +1,5 @@
 #banner {
-  height: 500px;
+  height: calc(100vh - 62px);
   width: 100%;
   background-color: var(--color-primary-light);
   position: relative;
@@ -37,6 +37,11 @@
     .banner-right {
       img {
         border-radius: 10px;
+      }
+    }
+    .banner-founder {
+      img {
+        height: 86vh;
       }
     }
   }

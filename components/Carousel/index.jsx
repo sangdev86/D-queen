@@ -9,12 +9,15 @@ export default function Carousel({
   length = 1,
   show,
   children,
-  infinityTime = null
+  style = undefined,
+  // left/right
+  infinityTime = undefined
 }) {
   const carousel = useRef();
 
   const [scroll, setScroll] = useState(0);
   const [oRing, setoRing] = useState(0);
+  const [autoPlay, setAutoPlay] = useState(infinityTime);
 
   // const breakPoint = () => {
   //   let clientWidth = carousel.current.clientWidth;
@@ -47,11 +50,15 @@ export default function Carousel({
   useEffect(() => {
     carousel.current.scrollLeft = scroll;
   }, [scroll]);
+
   useEffect(() => {
-    if (isNaN(infinityTime)) return;
-    let play = setInterval(() => {
-      navigationItem('right');
-    }, infinityTime);
+    if (isNaN(autoPlay)) return;
+    let play = setInterval(
+      () => {
+        navigationItem('right');
+      },
+      autoPlay !== undefined ? autoPlay : 0
+    );
     return () => {
       clearInterval(play);
     };
@@ -60,6 +67,9 @@ export default function Carousel({
   const navigationItem = (type) => {
     let clientWidth = carousel.current.clientWidth;
     const widthItem = clientWidth / show;
+    if (style) {
+      widthItem = clientWidth * 0.4;
+    }
     let maxWithScroll = length * (1 - show / length) * widthItem;
     if (type == 'left') {
       if (scroll <= 0) {
@@ -86,11 +96,7 @@ export default function Carousel({
       setScroll(type * widthItem);
     }
   };
-  // useEffect(() => {
-  //   setInterval(() => {
-  //     navigationItem('right');
-  //   }, 5000);
-  // });
+
   const findByKey = (name) => {
     if (!Array.isArray(children)) return children;
     children.map((child) => {
@@ -136,7 +142,12 @@ export default function Carousel({
       >
         <GrNext className="arrow-detail " />
       </div>
-      <div className={'style style-' + show} ref={carousel}>
+      <div
+        className={'style style-' + show + ' ' + style}
+        ref={carousel}
+        onMouseOver={() => setAutoPlay(undefined)}
+        onMouseOut={() => setAutoPlay(infinityTime)}
+      >
         {findByKey('item')}
       </div>
       <ul className="carousel-navigation">{navigation(length)}</ul>

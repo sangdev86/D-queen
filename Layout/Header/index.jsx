@@ -21,19 +21,21 @@ export default function Header() {
             />
           </div>
           <div className="header-right">
-            <div className="header-search">
-              <Search />
-            </div>
+            <ul>
+              <li className="header-search">
+                <Search />
+              </li>
 
-            <div className="header-notification">
-              <Notification />
-            </div>
-            <div className="header-account">
-              <HeaderAccount />
-            </div>
-            <did className="header-cart">
-              <Cart />
-            </did>
+              <li className="header-notification">
+                <Notification />
+              </li>
+              <li className="header-account">
+                <HeaderAccount />
+              </li>
+              <li className="header-cart">
+                <Cart />
+              </li>
+            </ul>
           </div>
         </div>
       </div>

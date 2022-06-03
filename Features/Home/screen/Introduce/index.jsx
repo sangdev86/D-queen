@@ -52,7 +52,7 @@ export default function Introduce() {
           </div>
         </div>
       </div>
-      <div className="introduce-bottom">
+      {/* <div className="introduce-bottom">
         <div className="container">
           <div className="introduce-wrapper">
             <div className="content-spa">
@@ -75,7 +75,7 @@ export default function Introduce() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -13,13 +13,14 @@
       position: absolute;
       top: 0;
       left: 0;
-      background-color: #fff5f4;
+      // background-color: #fff5f4;
       width: 35%;
       height: 100%;
       z-index: 0;
     }
     .bg-right {
-      background-color: #e4f7f5;
+      // background-color: #e4f7f5;
+      background-color: var(--color-primary-light);
       position: absolute;
       top: 0;
       right: 0;
@@ -71,7 +72,7 @@
           width: 100%;
           height: 100%;
           object-fit: contain;
-          background-color: #8adbd6;
+          background-color: var(--color-primary);
           border: 1px solid white;
           border-radius: 10px;
         }

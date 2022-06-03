@@ -1,19 +1,8 @@
 @import './Event/Event';
 @import './Customers/Customers';
 @import './Introduce/Introduce';
-@import './Latest/Latest';
-#home {
-  #customers {
-    text-align: center;
-    padding: 3rem 0;
-
-    h2 {
-      font-size: 3rem;
-      margin-bottom: 2rem;
-    }
-    .text {
-      font-size: 1.4rem;
-      margin-bottom: 30px;
-    }
-  }
-}
+@import './Founder/Founder';
+@import './FeedBack/FeedBack';
+@import './LatestProduct/LatestProduct';
+@import './Customers/Customers';
+@import './ListProduct/ListProduct';

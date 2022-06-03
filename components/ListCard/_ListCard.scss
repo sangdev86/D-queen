@@ -1,0 +1,29 @@
+#list-card {
+  .category {
+    display: flex;
+    text-align: center;
+    li {
+      font-size: 1.6rem;
+      padding: 1rem 2rem 1rem 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      border-bottom: 2px solid transparent;
+      &:hover {
+        color: var(--color-grey-dark);
+      }
+    }
+    .active {
+      color: var(--color-primary-dark);
+      border-bottom: 2px solid var(--color-primary-dark);
+    }
+  }
+  .bottom-content {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 25vh;
+    .content-item {
+      width: 25%;
+    }
+  }
+}

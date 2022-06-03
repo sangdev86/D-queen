@@ -4,7 +4,7 @@ import Banner from '../../components/Banner';
 export default function ContentLayout({ props }) {
   return (
     <div id="content-layout">
-      <Banner />
+      {/* <Banner /> */}
       {props}
     </div>
   );

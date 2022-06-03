@@ -172,7 +172,7 @@ export default function Event() {
     }
   ];
   return (
-    <div id="event">
+    <div id="event" className="custom">
       <div className="container">
         <div className="top-title left">
           <div className="layout-left">

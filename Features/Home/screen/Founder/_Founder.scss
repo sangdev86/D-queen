@@ -1,0 +1,36 @@
+#founder {
+  margin: 10rem 0;
+  .founder-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 80%;
+    .founder-left {
+      width: 50%;
+      img {
+        width: 40rem;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+    .founder-right {
+      width: 50%;
+      h2 {
+        font-size: 3rem;
+        text-align: center;
+        margin: 2rem;
+      }
+      p {
+        font-size: 1.4rem;
+        line-height: 2rem;
+        text-align: justify;
+        margin-bottom: 1rem;
+      }
+      span {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+}
