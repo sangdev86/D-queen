@@ -48,7 +48,7 @@ export default function Card(props) {
             )}
             <div>
               <span className="btn btn-add">Thêm</span>
-              <span className="btn btn-buy">Mua</span>
+              {/* <span className="btn btn-buy">Mua</span> */}
             </div>
           </div>
         </div>

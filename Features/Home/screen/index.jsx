@@ -1,6 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import Banner from '../../../components/Banner';
+import Certifcate from './Certificate';
+import Chanels from './Chanels';
 import Customers from './Customers';
 import Event from './Event';
 import FeedBack from './FeedBack';
@@ -22,6 +24,8 @@ export default function Home() {
       <LatestProduct />
       <Customers />
       <ListProduct />
+      <Certifcate />
+      <Chanels />
     </div>
   );
 }

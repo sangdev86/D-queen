@@ -6,7 +6,7 @@ export default function LatestProduct() {
       <div className="lastest-product-wrapper">
         <div className="left">
           <h2>
-            Dòng sản phẩm mới nhất
+            Ra mắt <br /> Sản phẩm mới nhất
             <br />
             <span> Kem trị nám tàn nhan</span>
           </h2>

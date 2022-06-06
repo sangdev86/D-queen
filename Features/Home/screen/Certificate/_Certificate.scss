@@ -1,0 +1,12 @@
+#certificate {
+  background-color: var(--color-primary-light);
+  .certificate-wrapper {
+  }
+  img {
+    width: 200px;
+    transition: all 0.5s;
+    &:hover {
+      transform: scale(2);
+    }
+  }
+}

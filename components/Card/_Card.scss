@@ -1,22 +1,33 @@
 .card {
   .wrapper-card {
     margin: 1rem;
+
+    box-shadow: var(--box-shadow-dark);
+    text-align: center;
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
     .top-card {
       display: flex;
       justify-content: center;
       height: 20rem;
       width: 100%;
       position: relative;
+      overflow: hidden;
 
       img {
         margin: 0 auto;
         width: 100%;
         height: 100%;
         cursor: pointer;
+        transition: transform 0.5s, filter 1.5s ease-in-out;
       }
     }
     .bottom-card {
-      box-shadow: var(--box-shadow-dark);
+      // box-shadow: var(--box-shadow-dark);
       padding: 0 2rem;
 
       h4 {
@@ -73,26 +84,27 @@
           padding: 0.5rem 1.8rem;
           font-weight: 700;
           transition: all 0.4s;
-          border-radius: 5px;
+          // border-radius: 5px;
           text-align: center;
           cursor: pointer;
           &:hover {
-            color: var(--color-primary-dark);
+            background-color: var(--color-primary-dark);
             border: 1px solid var(--color-primary-dark);
-            background-color: var(--color-white);
+            color: var(--color-white);
           }
         }
+        // .btn-add {
+        //   margin-right: 4px;
+        //   background-color: var(--color-primary-light);
+        //   color: var(--color-primary-dark);
+        //   border: 1px solid var(--color-primary-light);
+        // }
         .btn-add {
-          margin-right: 4px;
-          background-color: var(--color-primary-light);
-          color: var(--color-primary-dark);
-          border: 1px solid var(--color-primary-light);
-        }
-        .btn-buy {
           margin-left: 4px;
-          background-color: var(--color-primary-dark);
+
+          color: var(--color-primary-dark);
           border: 1px solid var(--color-primary-dark);
-          color: var(--color-white);
+          background-color: var(--color-white);
         }
       }
     }

@@ -3,7 +3,7 @@ import { GiChestnutLeaf } from 'react-icons/gi';
 import ListCard from '../../../../components/ListCard';
 export default function ListProduct() {
   return (
-    <div id="list-card" className="custom">
+    <div id="list-product" className="custom">
       <div className="container">
         <div className="top-title left">
           <div className="layout-left">
