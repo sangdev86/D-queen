@@ -35,13 +35,14 @@
         }
       }
       // seapher
+
       li.contact-follow-item {
         padding: 25px;
         margin: 0 30px;
-        // border: 1px solid var(--color-grey-light);
+
         border-radius: 10px;
-        box-shadow: var(--box-shadow-dark);
-        background-color: white;
+        // box-shadow: var(--box-shadow-dark);
+        // background-color: white;
 
         .contact-top {
           margin-bottom: 20px;
@@ -103,24 +104,14 @@
       }
     }
   }
-  #social {
-    background-color: #f5f5f5;
-  }
   #contact {
-    // background-color: #fafff8;
-    padding-bottom: 0;
-  }
-  #feedback {
-    .wrapper-carousel-item {
-      .feedback-carousel-item {
-        .img {
-          box-shadow: var(--box-shadow-dark);
-          width: 25rem;
-          cursor: pointer;
-        }
-      }
+    .contact-follow-wrapper {
+      background-color: #f5f5f5;
+      width: 80%;
+      margin: 0 auto;
     }
   }
+
   #footer-middle {
     color: var(--color-grey-light);
     background-color: var(--color-grey-dark);
@@ -160,6 +151,6 @@
     background-color: #f5f5f5;
     text-align: center;
     font-size: 1.4rem;
-    padding: 20px 0 40px 0;
+    padding: 20px 0;
   }
 }

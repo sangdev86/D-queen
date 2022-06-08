@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function LatestProduct() {
   return (
-    <div id="latest-product">
+    <div id="latest-product" className="custom">
       <div className="lastest-product-wrapper">
         <div className="left">
           <h2>

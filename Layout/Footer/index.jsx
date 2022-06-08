@@ -13,7 +13,7 @@ export default function Footer() {
             Bạn vui lòng add zalo để được phản hồi nhanh nhất từ chúng
             tôi hoặc qua mạng xã hội khác
           </p>
-          <ul className="social-follow-wrapper">
+          <ul className="contact-follow-wrapper">
             {[
               {
                 name: 'LINH NGUYỄN',
@@ -25,7 +25,7 @@ export default function Footer() {
                 avatarZalo: '/image/contact/zalo-avatar.png',
                 linkFacebook:
                   'https://www.facebook.com/profile.php?id=100004389555833',
-                linkZalo: ''
+                linkZalo: 'https://zalo.me/0939787887'
               },
               {
                 name: 'SANG TRẦN',
@@ -36,7 +36,7 @@ export default function Footer() {
                 avatarFacebook: '/image/contact/facebook-avatar.png',
                 avatarZalo: '/image/contact/zalo-avatar.png',
                 linkFacebook: 'https://www.facebook.com/gnas93',
-                linkZalo: ''
+                linkZalo: 'https://zalo.me/0898849953'
               },
               {
                 name: 'D QUEEN',
@@ -55,7 +55,7 @@ export default function Footer() {
                 name,
                 avatar,
                 phone,
-                text,
+                // text,
                 time,
                 avatarFacebook,
                 linkFacebook,
@@ -108,25 +108,6 @@ export default function Footer() {
             })}
           </ul>
         </div>
-        <section id="social" className="footer-item">
-          <div className="container">
-            <h2>Chanel</h2>
-            <p className="text">
-              Theo dõi review để nhận thông tin khuyến mãi
-            </p>
-            <ul className="social-follow-wrapper">
-              {[
-                <RiFacebookCircleLine />,
-                <RiYoutubeLine />,
-                <FaTiktok />
-              ].map((item, index) => (
-                <li className="icon" key={index}>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
       </section>
       <div id="footer-middle">
         <div className="container">

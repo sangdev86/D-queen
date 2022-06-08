@@ -14,7 +14,9 @@ export default function ListProduct() {
             <h2>Danh Mục Sản Phẩm</h2>
           </div>
           <div className="layout-right">
-            <span>Tất cả sản phẩm</span>
+            <span className="button-primary-light">
+              Tất cả sản phẩm
+            </span>
           </div>
         </div>
         <ListCard />

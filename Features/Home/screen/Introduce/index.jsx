@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Introduce() {
   return (
-    <div id="introduce">
+    <div id="introduce" className="custom">
       <div className="introduce-top">
         <div className="bg-left"></div>
         <div className="bg-right"></div>
@@ -14,7 +14,7 @@ export default function Introduce() {
             </div>
             <div className="content-product introduce-item">
               <div className="content-wrapper-product">
-                <h3>Về sản phẩm của chúng tôi</h3>
+                <h2>Về sản phẩm của chúng tôi</h2>
                 <p>
                   Với sản phẩm cao cấp thuộc dòng Dược và chiết xuất
                   từ nguyên liệu thiên nhiên, nhưng định giá thành hợp
@@ -30,7 +30,7 @@ export default function Introduce() {
             </div>
             <div className="content-our introduce-item">
               <div className="content-wrapper-our">
-                <h3>Thương hiệu D'Queen</h3>
+                <h2>Thương hiệu D'Queen</h2>
                 <p>
                   Chúng tôi tự hào là công ty uy tín cùng với ca sĩ
                   Akari Phan làm đại diện thương hiệu D'Queen . Tất cả

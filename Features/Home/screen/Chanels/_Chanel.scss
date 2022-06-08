@@ -1,7 +1,17 @@
 #chanels {
-  background-color: var(--color-primary-dark);
-
+  margin: 0 auto;
+  width: 100%;
+  padding: 4rem;
   .chanels-wrapper {
-    display: flex;
+    text-align: center;
+
+    h2 {
+      font-size: 3rem;
+      padding: 3rem 2rem;
+    }
+    .youtube {
+      display: flex;
+      justify-content: center;
+    }
   }
 }

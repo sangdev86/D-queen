@@ -2,45 +2,40 @@
 @import './Banner/Banner';
 @import './Card/Card';
 @import './ListCard/ListCard';
+@import './Modal/modal';
 .custom {
-  margin: 2rem 0;
+  margin: 8rem 0;
   overflow: hidden;
   .top-title {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-
-    .icon {
-      font-size: 3rem;
-      color: var(--color-primary-dark);
-    }
-    h2 {
-      font-size: 3rem;
-      margin-bottom: 5px;
-      text-transform: uppercase;
-    }
-    span {
-      font-size: 1.6rem;
-      line-height: 1.8rem;
-      width: 50%;
-      margin: 1rem auto;
-    }
-    &.left {
-      text-align: left;
-    }
-    &.center {
-      text-align: center;
-    }
-    &.right {
-      text-align: right;
-    }
-    .layout-right {
-      span {
-        text-decoration: underline;
-        font-style: italic;
-        color: var(--color-primary-dark);
-        cursor: pointer;
-      }
-    }
+  }
+  .icon {
+    font-size: 3rem;
+    color: var(--color-primary-dark);
+  }
+  h2 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    font-size: 3rem;
+    margin-bottom: 5px;
+  }
+  span {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    width: 50%;
+    margin: 1rem auto;
+  }
+  &.left {
+    text-align: left;
+  }
+  &.center {
+    text-align: center;
+  }
+  &.right {
+    text-align: right;
   }
 }

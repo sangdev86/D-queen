@@ -58,7 +58,7 @@ export default function FeedBack() {
     ]
   };
   return (
-    <section id="feed-back">
+    <section id="feed-back" className="custom">
       <div className="container">
         <div className="feed-back-wrapper">
           <div className="left">

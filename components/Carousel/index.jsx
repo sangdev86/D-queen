@@ -11,7 +11,8 @@ export default function Carousel({
   children,
   style = undefined,
   // left/right
-  infinityTime = undefined
+  infinityTime = undefined,
+  overFlowHidden = true
 }) {
   const carousel = useRef();
 
@@ -129,7 +130,10 @@ export default function Carousel({
   };
 
   return (
-    <div id="carousel">
+    <div
+      id="carousel"
+      className={overFlowHidden ? ' overflow-hidden' : ''}
+    >
       <div
         className="arrow left-arrow"
         onClick={() => navigationItem('left')}

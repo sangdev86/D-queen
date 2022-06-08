@@ -1,5 +1,22 @@
-#modal{
-  width: 100%;
-  height: 100%;
-  background-color: rgb(234, 146, 146);
+#modal {
+  .over-play {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: rgba(84, 84, 84, 0.8);
+    cursor: pointer;
+    &::after {
+      content: 'X';
+      font-size: 3rem;
+      color: white;
+      @include position(90%, 90%);
+    }
+  }
+  .modal-item {
+    @include absCenter();
+    box-shadow: var(--box-shadow-white);
+  }
 }

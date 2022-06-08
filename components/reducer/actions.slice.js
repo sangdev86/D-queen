@@ -26,6 +26,17 @@ export const actionSlice = createSlice({
       } else {
         state.notification.open = false;
       }
+    },
+    MODAL: (state, action) => {
+      const { open, data } = action.payload;
+      if (open && data !== undefined) {
+        state.modal = action.payload;
+      } else {
+        state.modal = {
+          open: false,
+          data: undefined
+        };
+      }
     }
   }
 });

@@ -1,4 +1,7 @@
-import { actionSlice } from '../components/reducer/actions.slice';
+import {
+  actionSlice,
+  actionState
+} from '../components/reducer/actions.slice';
 
 const { combineReducers } = require('redux');
 
@@ -9,7 +12,7 @@ export default rootReducer;
 
 // comment line
 export const storeState = {
-  actions: actionSlice.reducer
+  actions: actionState
 };
 
 export const mapStateToProps = (state = storeState) => {

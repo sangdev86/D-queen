@@ -82,6 +82,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 2rem;
     .navigation-item {
       padding: 5px;
       border-radius: 50%;
@@ -94,3 +95,25 @@
     }
   }
 }
+// <div id="certificate">
+// <div className="container">
+//   <div className="certificate-wrapper">
+//     <Carousel show={1} length={data.length} infinityTime={4000} overFlowHidden={false}>
+//       <Fragment>
+//         {data.map((item) => {
+//           const { title, src, text } = item;
+//           return (
+//             <div className="wrapper-carousel-item">
+//               <h3>{title}</h3>
+//               <p>{text}</p>
+//               <div className="">
+//                 <img src={src} alt={text} />
+//               </div>
+//             </div>
+//           );
+//         })}
+//       </Fragment>
+//     </Carousel>
+//   </div>
+// </div>
+// </div>

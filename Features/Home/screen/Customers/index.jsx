@@ -53,7 +53,7 @@ export default function Customers() {
     ]
   };
   return (
-    <section id="customers">
+    <section id="customers" className="custom">
       <div className="container">
         <div className="feed-back-wrapper">
           <div className="left">

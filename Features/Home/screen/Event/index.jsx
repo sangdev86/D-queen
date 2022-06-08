@@ -183,7 +183,9 @@ export default function Event() {
             <h2>Event</h2>
           </div>
           <div className="layout-right">
-            <span>Tất cả sản phẩm</span>
+            <span className="button-primary-light">
+              Tất cả sản phẩm
+            </span>
           </div>
         </div>
         <div className="bottom-content">

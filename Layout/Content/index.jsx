@@ -1,10 +1,11 @@
 import React from 'react';
-import Banner from '../../components/Banner';
+import ComponentWithRedux from '../../components/ComponentWithRedux';
+import Modal from '../../components/Modal';
 
 export default function ContentLayout({ props }) {
   return (
     <div id="content-layout">
-      {/* <Banner /> */}
+      <Modal />
       {props}
     </div>
   );
