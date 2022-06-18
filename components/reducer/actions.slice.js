@@ -3,11 +3,11 @@ import { createSlice } from '@reduxjs/toolkit';
 export const actionState = {
   notification: {
     open: false,
-    status: undefined, // success|error
+    status: null, // success|error
     message: null,
     ms: 10
   },
-  modal: { open: false, data: undefined },
+  modal: { open: false, data: null },
   currentLanguage: 'vie'
 };
 export const actionSlice = createSlice({
@@ -29,12 +29,12 @@ export const actionSlice = createSlice({
     },
     MODAL: (state, action) => {
       const { open, data } = action.payload;
-      if (open && data !== undefined) {
+      if (open && data !== null) {
         state.modal = action.payload;
       } else {
         state.modal = {
           open: false,
-          data: undefined
+          data: null
         };
       }
     }
