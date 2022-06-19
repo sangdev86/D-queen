@@ -35,7 +35,7 @@
   background-color: var(--bg-white);
   .header-wrapper {
     display: grid;
-    grid-template-columns: 40% 20% 40%;
+    grid-template-columns: 35% 30% 35%;
     align-content: center;
     width: 100%;
     margin: 0 20px;
@@ -49,6 +49,13 @@
 
       img {
         height: 60px;
+      }
+      p {
+        font-size: 1.6rem;
+        color: var(--color-primary-dark);
+        font-weight: 700;
+        padding: 2px 0 10px;
+        text-transform: uppercase;
       }
     }
     .header-right {

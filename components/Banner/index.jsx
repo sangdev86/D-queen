@@ -17,7 +17,13 @@ export default function Banner() {
                 Làm nên vẻ đẹp tràn đầy sức sống tự nhiên theo năm
                 tháng
               </h2>
+              {/* <h2>Phụ Nữ để xinh </h2>
+              <h2> D'Queen để Xinh</h2> */}
               <span className="button-primary">Về D'Queen</span>
+              <h2 className="slogan">
+                <span className="text-1">"Phụ Nữ để Yêu</span>
+                <span className="text-2">D'Queen để Xinh"</span>
+              </h2>
             </div>
           </div>
           {/* <div className="banner-right banner-item">

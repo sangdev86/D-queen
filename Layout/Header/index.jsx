@@ -19,6 +19,7 @@ export default function Header() {
               src="/image/logo-primary-dark.png"
               alt="Dược Mỹ Thiên Nhiên D'Queen cùng Akariphan"
             />
+            <br />
           </div>
           <div className="header-right">
             <ul>

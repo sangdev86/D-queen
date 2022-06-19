@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { useSelector } from 'react-redux';
 import { convertVND } from '../../../Assets/utils/convertMoney';
 import Carousel from '../../../components/Carousel';
+import Price from '../../../components/Price';
 import SaleTime from '../../../components/SaleTime';
 import FeedBack from '../../Home/screen/FeedBack';
 
@@ -90,8 +91,8 @@ export default function ProductDetail() {
               infinityTime={5000}
             >
               <Fragment>
-                {image.map((item) => (
-                  <img src={item.src} alt={item.alt} />
+                {image.map((item, index) => (
+                  <img key={index} src={item.src} alt={item.alt} />
                 ))}
               </Fragment>
             </Carousel>
@@ -110,11 +111,7 @@ export default function ProductDetail() {
             </ul>
             <div className="product-price">
               <div className="price">
-                <span className="price-sale">{convertVND(sale)}</span>
-                <br />
-                <span className="none-price-sale">
-                  {convertVND(price)}
-                </span>
+                <Price price={price} sale={sale} />
               </div>
               <div className="banner-sale">
                 <div className="sale">
@@ -174,20 +171,7 @@ export default function ProductDetail() {
             </p>
           ))}
         </div>
-        <div id="product-youtube">
-          <h2>{youtube.title}</h2>
-          <div>
-            <iframe
-              width="666"
-              height="366"
-              src={youtube.src}
-              title={youtube.seo}
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen={true}
-            ></iframe>
-          </div>
-        </div>
+
         <div id="ingredient" className="product-custom">
           <h3>Thành phần:</h3>
           <span>Nhiên liệu an toàn nhập khẩu từ Châu Âu: </span>
@@ -207,6 +191,20 @@ export default function ProductDetail() {
               </li>
             ))}
           </ul>
+        </div>
+        <div id="product-youtube">
+          <h2>{youtube.title}</h2>
+          <div>
+            <iframe
+              width="666"
+              height="366"
+              src={youtube.src}
+              title={youtube.seo}
+              frameBorder={0}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullscreen={true}
+            ></iframe>
+          </div>
         </div>
         <div id="result" className="product-custom">
           <h3>Kết quả sử dụng khách hàng gửi về D'Queen</h3>

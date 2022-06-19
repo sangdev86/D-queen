@@ -25,14 +25,33 @@
         margin: 10px 0 20px;
         width: 90%;
       }
-      span {
-        margin-top: 100px;
-      }
+      // span {
+      //   margin-top: 100px;
+      // }
     }
     .banner-left {
       display: flex;
       justify-content: flex-end;
       width: 35%;
+      .slogan {
+        color: var(--color-primary-dark);
+        letter-spacing: 1px;
+        padding-top: 4rem;
+        font-style: italic;
+        font-size: 2rem;
+        text-transform: capitalize;
+        .text-1 {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          line-height: 3rem;
+        }
+        .text-2 {
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+        }
+      }
     }
     .banner-right {
       img {

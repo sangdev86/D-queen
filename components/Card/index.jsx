@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { AiFillStar } from 'react-icons/ai';
+import Price from '../Price';
 export default function Card(props) {
   const {
     id,
@@ -41,16 +42,7 @@ export default function Card(props) {
             ))}
           </ul>
           <div className="price">
-            {price > 0 ? (
-              <div className="sale">
-                <p className="price-current">{sale}</p>
-                <p className="price-old">{price}</p>
-              </div>
-            ) : (
-              <div className="none-sale">
-                <span className="price-current">{price}</span>
-              </div>
-            )}
+            <Price price={price} sale={sale} />
             <div>
               <span className="btn btn-add">Thêm</span>
               {/* <span className="btn btn-buy">Mua</span> */}

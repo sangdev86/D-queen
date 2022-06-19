@@ -17,10 +17,11 @@ export default function Introduce() {
                 <h2>Về sản phẩm của chúng tôi</h2>
                 <p>
                   Với sản phẩm cao cấp thuộc dòng Dược và chiết xuất
-                  từ nguyên liệu thiên nhiên, nhưng định giá thành hợp
-                  lý, được nhiều khách hàng phản hồi tốt. Dòng sản
-                  phẩm sản phẩm trị nám, làm trẻ hóa làn da trắng
-                  hồng, tăng thêm sức sống.
+                  từ nguyên liệu thiên nhiên
+                  <span> "Nhập khẩu từ châu âu"</span>, nhưng định giá
+                  thành hợp lý, được nhiều khách hàng phản hồi tốt.
+                  Dòng sản phẩm sản phẩm trị nám, làm trẻ hóa làn da
+                  trắng hồng, tăng thêm sức sống.
                 </p>
                 <br />
                 <a href="#">

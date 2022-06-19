@@ -1,0 +1,11 @@
+#price {
+  .price-sale {
+    color: var(--color-primary-dark);
+    font-weight: 700;
+  }
+  .none-price-sale {
+    font-size: 1.2rem;
+    text-decoration: line-through;
+    color: var(--color-grey-dark);
+  }
+}

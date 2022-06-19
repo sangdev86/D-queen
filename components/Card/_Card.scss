@@ -1,9 +1,8 @@
 .card {
   .wrapper-card {
     margin: 1rem;
-
     box-shadow: var(--box-shadow-dark);
-    text-align: center;
+    // text-align: center;
 
     &:hover {
       img {
@@ -37,6 +36,13 @@
         padding: 0.7rem 0;
         height: 55px;
         cursor: pointer;
+        a {
+          text-decoration: none;
+          color: black;
+          &:hover {
+            color: var(--color-primary-dark);
+          }
+        }
       }
       .star {
         font-size: 2.5rem;
