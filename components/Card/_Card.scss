@@ -55,13 +55,14 @@
         justify-content: space-between;
         .impressive-item {
           text-align: center;
-          padding: 4px 4px;
-          margin: 3px 0;
+          padding: 2px;
+          margin: 2px;
           background-color: white;
           text-transform: capitalize;
           background-color: rgba(240, 240, 227, 0.553);
           border-radius: 2px;
           font-size: 0.9rem;
+          width: 30%;
         }
       }
       .price {
