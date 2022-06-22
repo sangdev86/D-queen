@@ -36,6 +36,8 @@
         padding: 0.7rem 0;
         height: 55px;
         cursor: pointer;
+        letter-spacing: 0.2px;
+        word-spacing: 5px;
         a {
           text-decoration: none;
           color: black;
@@ -56,13 +58,13 @@
         .impressive-item {
           text-align: center;
           padding: 2px;
-          margin: 2px;
+          margin: 2px 0;
           background-color: white;
           text-transform: capitalize;
           background-color: rgba(240, 240, 227, 0.553);
           border-radius: 2px;
           font-size: 0.9rem;
-          width: 30%;
+          width: 31%;
         }
       }
       .price {
