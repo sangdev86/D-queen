@@ -52,6 +52,40 @@ body {
   @include respond(tab-port) {
     padding: 0;
   }
+  &::-webkit-scrollbar-track {
+    display: none;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: rgba(224, 224, 224, 0.3);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    padding-left: 20px;
+    border-radius: 10px;
+    width: 2px;
+    background-color: rgba(224, 224, 224, 0.801);
+    height: 100px;
+  }
+  .scroll-custom {
+    &::-webkit-scrollbar-track {
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      background-color: rgba(224, 224, 224, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      padding-left: 20px;
+      border-radius: 10px;
+      width: 2px;
+      background-color: rgba(224, 224, 224, 0.801);
+      height: 100px;
+    }
+  }
 }
 .brand-name {
   color: var(--color-primary);
