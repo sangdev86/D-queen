@@ -19,11 +19,20 @@ export default function Modal() {
   return (
     <div id="modal">
       {modal.open ? (
-        <div
-          className="over-play"
-          onClick={() => dispatch(ACTIONS.modal(false))}
-        >
-          <div className="modal-item">{modal.data}</div>
+        <div className="over-play-wrapper">
+          <div className="modal-item">
+            {modal.data}
+            <div
+              className="close"
+              onClick={() => dispatch(ACTIONS.modal(false))}
+            >
+              X
+            </div>
+          </div>
+          <div
+            className="over-play"
+            onClick={() => dispatch(ACTIONS.modal(false))}
+          ></div>
         </div>
       ) : (
         ''

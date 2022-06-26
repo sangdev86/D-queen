@@ -16,6 +16,7 @@ const enhancer = composeEnhances(applyMiddleware(thunk));
 // nextjs
 const reducer = (state, action) => {
   if (action.type === HYDRATE) {
+    // console.log('actionnnnn', action);
     const nextState = { ...state, ...action.payload };
     return nextState;
   } else {

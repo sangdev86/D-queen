@@ -1,1 +1,13 @@
-@import './FeedBack/FeedBack';
+@import './NoneProfile/NoneProfile';
+@import './Profile/Profile';
+#auth {
+  .navigation {
+    font-size: 1.6rem;
+    padding: 5px;
+    font-weight: 700;
+    text-align: right;
+    &:hover {
+      color: var(--color-primary-dark);
+    }
+  }
+}

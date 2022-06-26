@@ -9,14 +9,5 @@ export const TYPE_PRODUCT_DETAIL = {
     api: () => {
       return api.fetchData('/products');
     }
-  }),
-  action: () => api.fetchData('/products'),
-  test: () => async (dispatch) => {
-    const res = await api.fetchData(
-      'QuanLyPhim/LayDanhSachPhim?maNhom=GP01'
-    );
-    // const data = JSON.parse(res);
-    console.log('res', res);
-    // dispatch(FETCHPRODUCT(res));
-  }
+  })
 };

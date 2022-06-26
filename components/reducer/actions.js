@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { actionSlice } from './actions.slice';
 
-const { NOTIFICATION, MODAL } = actionSlice.actions;
+const { NOTIFICATION, MODAL, CHANGETYPE } = actionSlice.actions;
 
 export const ACTIONS = {
   ntf:
@@ -19,6 +19,10 @@ export const ACTIONS = {
     (dispatch) => {
       dispatch(MODAL({ open: open, data: data }));
     },
+
+  changeTypeNoneLogin: (type) => (dispatch) =>
+    dispatch(CHANGETYPE(type)),
+
   get: (action) =>
     createAsyncThunk(action.type, async (params, thunkAPI) => {
       const { api } = action;
@@ -30,7 +34,27 @@ export const ACTIONS = {
           response.code < 300 &&
           response.message === 'success'
         ) {
-          return response;
+          return response.data;
+        } else {
+          return thunkAPI.rejectWithValue({});
+        }
+      } catch (e) {
+        return thunkAPI.rejectWithValue({});
+      }
+    }),
+  post: (action) =>
+    createAsyncThunk(action.type, async (body, thunkAPI) => {
+      const { api } = action;
+
+      try {
+        const response = await api(body);
+
+        if (
+          response.code >= 200 &&
+          response.code < 300 &&
+          response.message === 'success'
+        ) {
+          return response.data;
         } else {
           return thunkAPI.rejectWithValue({});
         }

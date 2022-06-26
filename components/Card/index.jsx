@@ -19,13 +19,13 @@ export default function Card(props) {
     <div className="card wrapper-carousel-item">
       <div className="wrapper-card">
         <div className="top-card">
-          <Link href={`product/${id}`}>
+          <Link href={`/product/${id}`}>
             <img src={image[0].src} alt="title" />
           </Link>
         </div>
         <div className="bottom-card">
           <h4 className="title">
-            <Link href={`product/${id}`}>{title}</Link>
+            <Link href={`/product/${id}`}>{title}</Link>
           </h4>
           <span className="star">
             <AiFillStar />

@@ -1,0 +1,23 @@
+#infomation {
+  .top {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: white;
+    padding: 1rem;
+    .item {
+      padding: 1rem 4rem;
+      margin: 0 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+      font-weight: 700;
+      border: 1px solid var(--color-primary-dark);
+      font-size: 1.4rem;
+      color: var(--color-primary-dark);
+      &.active {
+        color: white;
+        background-color: var(--color-primary-dark);
+      }
+    }
+  }
+}

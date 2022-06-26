@@ -202,7 +202,7 @@ export default function ProductDetail() {
               title={youtube.seo}
               frameBorder={0}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullscreen={true}
+              allowFullScreen={true}
             ></iframe>
           </div>
         </div>

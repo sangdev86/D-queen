@@ -61,17 +61,17 @@ class Api {
 
       try {
         const response = await axios(api, options);
-        // console.log(response);
+        // console.log('RES', response);
 
         const json = response.data;
-        // console.log('Response of', api, json);
+        // console.log('Response of', api, json.data);
         if (
           json.status >= 200 &&
           json.status < 300 &&
           json.message === 'success'
         ) {
           return {
-            ...json.data,
+            data: json.data,
             code: json.status,
             message: json.message
           };

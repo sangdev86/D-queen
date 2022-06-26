@@ -1,12 +1,21 @@
 import React from 'react';
-import Image from 'next/image';
+
 import Navigation from './Navigation';
 import Search from './Search';
 import HeaderAccount from './HeaderAccount';
-import Cart from './Cart';
-import Notification from './Notification';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { ACTIONS } from '../../components/reducer/actions';
+
+import Infomation from './Infomation';
+import { TYPE_MODAL } from './Infomation/infomationData';
+import { FaOpencart } from 'react-icons/fa';
 
 export default function Header() {
+  const dispatch = useDispatch();
+  // const isLogin = useSelector((state) => state.auth.isLogin);
+  // const userLogin = useSelector((state) => state.auth.userLogin);
+
   return (
     <header id="header">
       <div className="container">
@@ -27,14 +36,49 @@ export default function Header() {
                 <Search />
               </li>
 
-              <li className="header-notification">
-                <Notification />
-              </li>
-              <li className="header-account">
+              {/* <li
+                className="header-notification"
+                onClick={() =>
+                  dispatch(
+                    ACTIONS.modal(
+                      true,
+                      <Infomation typeModal={TYPE_MODAL.INFO} />
+                    )
+                  )
+                }
+              >
+                {isLogin ? 'Chào Sang' : ''}
+              </li> */}
+              {/* {isLogin && userLogin ? (
+                <li>Hi, {userLogin.name}</li>
+              ) : (
+                ''
+              )} */}
+              <li
+                className="header-account"
+                onClick={() =>
+                  dispatch(
+                    ACTIONS.modal(
+                      true,
+                      <Infomation typeModal={TYPE_MODAL.INFO} />
+                    )
+                  )
+                }
+              >
                 <HeaderAccount />
               </li>
-              <li className="header-cart">
-                <Cart />
+              <li
+                className="header-cart"
+                onClick={() =>
+                  dispatch(
+                    ACTIONS.modal(
+                      true,
+                      <Infomation typeModal={TYPE_MODAL.CART} />
+                    )
+                  )
+                }
+              >
+                <FaOpencart />
               </li>
             </ul>
           </div>

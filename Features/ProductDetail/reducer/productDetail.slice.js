@@ -35,7 +35,6 @@ export const productDetailSlice = createSlice({
       state.loading = true;
     },
     [getProductDetail.fulfilled]: (state, action) => {
-      console.log(action);
       state.product = action.payload;
       state.loading = false;
     },
