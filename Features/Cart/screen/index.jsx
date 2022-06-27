@@ -179,7 +179,7 @@ export default function Cart() {
     {
       id: '6',
       category: 'Collagen',
-      title: 'Sưã rữa mặt dược liệu thiên nhiên  4',
+      title: 'Sưã rữa mặt dược liệu thiên nhiên  6',
       image: [
         {
           src: '/image/products/SRM-1.png',
@@ -213,7 +213,7 @@ export default function Cart() {
     {
       id: '7',
       category: 'Sửa rửa mặt',
-      title: 'Sưã rữa mặt dược liệu thiên nhiên  5',
+      title: 'Sưã rữa mặt dược liệu thiên nhiên  7',
       image: [
         {
           src: '/image/products/SRM.png',
@@ -247,7 +247,7 @@ export default function Cart() {
     {
       id: '8',
       category: 'Collagen',
-      title: 'Sưã rữa mặt dược liệu thiên nhiên  4',
+      title: 'Sưã rữa mặt dược liệu thiên nhiên  8',
       image: [
         {
           src: '/image/products/SRM-1.png',
@@ -279,7 +279,11 @@ export default function Cart() {
       ingredient: 'Thành phần ........'
     }
   ];
-  const converData = api.map((item) => ({ ...item, amount: 1 }));
+  const converData = api.map((item) => ({
+    ...item,
+    amount: 1,
+    checked: false
+  }));
   const [data, setData] = React.useState(converData);
 
   const handleOnChange = (e, index) => {
@@ -294,6 +298,13 @@ export default function Cart() {
 
     setData(updateData);
   };
+  const handleChecked = (e, index) => {
+    const { checked } = e.currentTarget;
+    const updateData = [...data];
+
+    updateData[index].checked = checked;
+    setData(updateData);
+  };
   const changeAmount = (value, index) => {
     const updateData = [...data];
     if (value <= 1) {
@@ -306,10 +317,43 @@ export default function Cart() {
     if (index % 2 !== 0) return 'cart-item even';
     return 'cart-item';
   };
+  const checkAmountChecked = () => {
+    let amountChecked = 0;
+    for (let i = 0; i < data.length; i++) {
+      data[i].checked ? amountChecked++ : '';
+    }
+    return amountChecked;
+  };
+  const allChargeF = () => {
+    let allCharge = 0;
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].checked) {
+        allCharge += data[i].amount * data[i].sale;
+      }
+    }
+    return allCharge;
+  };
+  const checkAllF = (check) => {
+    let updateData = [...data];
+    for (let i = 0; i < updateData.length; i++) {
+      updateData[i].checked = check;
+    }
+    setData(updateData);
+  };
+  const delItemChecked = () => {
+    let updateData = [];
+    data.forEach((el) => {
+      el.checked === false ? updateData.push(el) : '';
+    });
+    setData(updateData);
+  };
   return (
     <div id="cart">
       <div className="list-cart">
         <div className="cart-head cart-item">
+          <div className="cart-product">
+            Chọn ({checkAmountChecked()})
+          </div>
           <div className="cart-product">Sản phẩm</div>
           <div className="cart-amount">số lượng</div>
           <div className="cart-price">Đơn giá</div>
@@ -318,13 +362,29 @@ export default function Cart() {
 
         <ul className="cart-item-wrapper scroll-custom">
           {data.map((item, index) => {
-            const { title, image, price, latest, sale, amount } =
-              item;
-            console.log(index, amount);
+            const {
+              title,
+              image,
+              price,
+              latest,
+              sale,
+              amount,
+              checked
+            } = item;
+
             return (
               <li className={checkItem(index)} key={index}>
+                <div className="">
+                  <input
+                    type="checkbox"
+                    checked={checked}
+                    onChange={(e) => handleChecked(e, index)}
+                  />
+                </div>
                 <div className="cart-product">
-                  <h5>{title}</h5>
+                  <h5 className={checked ? 'checked' : ''}>
+                    {title}
+                  </h5>
                   <div className="laster">
                     {latest ? 'Dòng mới' : ''}
                   </div>
@@ -355,17 +415,65 @@ export default function Cart() {
                   </div>
                 </div>
                 <div className="cart-price">
-                  <Price price={price} sale={sale} />
+                  <Price price={price} sale={sale} color="#515151" />
                 </div>
                 <div className="cart-charge">
-                  <Price charge={amount * sale} />
+                  <Price
+                    charge={amount * sale}
+                    color={checked ? 'var(--color-primary-dark)' : ''}
+                  />
                 </div>
               </li>
             );
           })}
         </ul>
+        <div className="actions">
+          <div className="actions-left">
+            <div
+              className="actions-button"
+              onClick={() => checkAllF(true)}
+            >
+              <span className="all button-bs">Chọn tất cả</span>
+            </div>
+            <div
+              className="actions-button"
+              onClick={() => checkAllF(false)}
+            >
+              <span className="del-tick button-bs">Bỏ đã chọn</span>
+            </div>
+            <div
+              className="actions-button"
+              onClick={() => delItemChecked()}
+            >
+              <span className="del-all button-bs">
+                Xóa ra giỏ hàng
+              </span>
+            </div>
+          </div>
+          <div className="actions-right">
+            {allChargeF() && checkAmountChecked() ? (
+              <div className="all-charge">
+                <span className="amount">
+                  ({checkAmountChecked()})
+                </span>
+                <Price
+                  charge={allChargeF()}
+                  color="var(--color-primary-dark)"
+                />
+              </div>
+            ) : (
+              ''
+            )}
+
+            <div className="actions-button">
+              <span className="all button-bs">
+                Tiến hành thanh toán
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="statistical">fdfd</div>
+      {/* <div className="statistical">fdfd</div> */}
     </div>
   );
 }

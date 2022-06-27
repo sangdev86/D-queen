@@ -1,15 +1,18 @@
 #cart {
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 80vh;
   background-color: white;
   padding: 1rem;
+
   .list-cart {
-    width: 60%;
+    width: 80%;
     .cart-item {
       display: grid;
-      grid-template-columns: 45% 15% 20% 20%;
+      grid-template-columns: 9% 40% 15% 18% 18%;
+    }
+    .checked {
+      color: var(--color-primary-dark);
     }
     .cart-head {
       padding: 1rem;
@@ -69,8 +72,52 @@
         }
       }
     }
-  }
-  .statistical {
-    width: 30%;
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      .actions-left {
+        display: flex;
+      }
+      .actions-right {
+        display: flex;
+        align-items: center;
+        .all-charge {
+          display: flex;
+          align-items: center;
+          .amount {
+            font-size: 1.4rem;
+            font-weight: 700;
+            padding-right: 2rem;
+          }
+        }
+      }
+      .actions-button {
+        padding: 3rem 2rem;
+        .all {
+          background-color: var(--color-primary-dark);
+          color: white;
+          &:hover {
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+          }
+        }
+        .del-all {
+          background-color: red;
+          color: white;
+          &:hover {
+            background-color: rgb(233, 160, 160);
+            color: red;
+          }
+        }
+        .del-tick {
+          background-color: var(--color-primary-dark);
+          color: white;
+          &:hover {
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+          }
+        }
+      }
+    }
   }
 }

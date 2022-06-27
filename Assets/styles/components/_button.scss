@@ -31,6 +31,13 @@
     border: 1px solid var(--color-white);
   }
 }
+.button-bs {
+  padding: 0.5rem 2rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  transform: all 0.3;
+  cursor: pointer;
+}
 
 .button-primary-gradient {
   background-image: linear-gradient(
