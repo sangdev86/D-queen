@@ -133,18 +133,18 @@ export default function ProductDetail() {
                 />
                 <div className="change-amount noselect">
                   <span
-                    className="in item"
-                    onClick={() => setAmount(amount + 1)}
-                  >
-                    +
-                  </span>
-                  <span
                     className="de item"
                     onClick={() =>
                       setAmount(amount <= 1 ? 1 : amount - 1)
                     }
                   >
                     -
+                  </span>
+                  <span
+                    className="in item"
+                    onClick={() => setAmount(amount + 1)}
+                  >
+                    +
                   </span>
                 </div>
                 <div className="button">

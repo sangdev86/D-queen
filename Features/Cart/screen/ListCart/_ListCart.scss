@@ -1,0 +1,117 @@
+#list-cart {
+  .list-cart {
+    width: 80%;
+    .cart-item {
+      display: grid;
+      grid-template-columns: 9% 40% 15% 18% 18%;
+    }
+    .checked {
+      color: var(--color-primary-dark);
+    }
+    .cart-head {
+      padding: 1rem;
+      background-color: var(--color-primary-light);
+      // text-align: left;
+      font-size: 1.4rem;
+      font-weight: 600;
+      text-transform: capitalize;
+    }
+    .cart-item-wrapper {
+      overflow-y: scroll;
+      // overflow-x: hidden;
+      height: 60vh;
+      .cart-item {
+        padding: 2rem 1rem;
+        &.even {
+          background-color: rgb(243 243 239 / 50%);
+        }
+        .cart-product {
+          h5 {
+            font-weight: 600;
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+          }
+          .image {
+            height: 100px;
+            img {
+              height: 100%;
+            }
+          }
+        }
+        .cart-amount {
+          .input {
+            width: 30px;
+            border-radius: 2px;
+            font-size: 1.2rem;
+            padding: 0;
+            text-align: center;
+            margin-bottom: 2rem;
+          }
+          .change-amount {
+            display: inline;
+
+            .item {
+              padding: 1.2rem;
+              font-size: 1.6rem;
+              cursor: pointer;
+            }
+          }
+        }
+        .cart-price {
+          font-size: 1.4rem;
+        }
+        .cart-charge {
+          font-size: 1.4rem;
+          font-weight: 600;
+        }
+      }
+    }
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      .actions-left {
+        display: flex;
+      }
+      .actions-right {
+        display: flex;
+        align-items: center;
+        .all-charge {
+          display: flex;
+          align-items: center;
+          .amount {
+            font-size: 1.4rem;
+            font-weight: 700;
+            padding-right: 2rem;
+          }
+        }
+      }
+      .actions-button {
+        padding: 3rem 2rem;
+        .all {
+          background-color: var(--color-primary-dark);
+          color: white;
+          &:hover {
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+          }
+        }
+        .del-all {
+          background-color: red;
+          color: white;
+          &:hover {
+            background-color: rgb(233, 160, 160);
+            color: red;
+          }
+        }
+        .del-tick {
+          background-color: var(--color-primary-dark);
+          color: white;
+          &:hover {
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+          }
+        }
+      }
+    }
+  }
+}

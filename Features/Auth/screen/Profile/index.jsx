@@ -37,7 +37,7 @@ export default function Profile() {
     }
   };
   return (
-    <div id="profile">
+    <div id="profile" className="cs-modal-auth">
       <Form {...propsForm} />
       <div className="navigation" onClick={() => dispatch(LOGOUT())}>
         Đăng xuất

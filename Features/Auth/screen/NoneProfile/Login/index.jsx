@@ -29,7 +29,7 @@ export default function Login() {
     fetchMainAction: TYPE_PRODUCT_DETAIL.getProductDetail()
   };
   return (
-    <div id="login">
+    <div id="login" className="cs-modal-auth">
       <Form {...propsForm} />
       <div
         className="navigation"

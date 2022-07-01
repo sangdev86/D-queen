@@ -6,6 +6,7 @@ import {
   authSlice,
   authState
 } from '../Features/Auth/reducer/auth.slice';
+import { cartSlice } from '../Features/Cart/reducer/cart.slice';
 import {
   productDetailSlice,
   productDetailState
@@ -16,7 +17,8 @@ const { combineReducers } = require('redux');
 const rootReducer = combineReducers({
   actions: actionSlice.reducer,
   productDetail: productDetailSlice.reducer,
-  auth: authSlice.reducer
+  auth: authSlice.reducer,
+  cart: cartSlice.reducer
 });
 export default rootReducer;
 

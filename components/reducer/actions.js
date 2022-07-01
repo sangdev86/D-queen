@@ -23,6 +23,11 @@ export const ACTIONS = {
   changeTypeNoneLogin: (type) => (dispatch) =>
     dispatch(CHANGETYPE(type)),
 
+  createAction: (action) =>
+    createAsyncThunk(action.type, (payload) => {
+      return payload;
+    }),
+
   get: (action) =>
     createAsyncThunk(action.type, async (params, thunkAPI) => {
       const { api } = action;

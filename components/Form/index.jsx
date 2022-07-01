@@ -210,13 +210,17 @@ export default function Form(props) {
               );
           }
         })}
-        <div className="button-submit">
-          <input
-            type="submit"
-            className="button-primary"
-            value={typeForm.button}
-          />
-        </div>
+        {typeForm.button !== null ? (
+          <div className="button-submit">
+            <input
+              type="submit"
+              className="button-primary"
+              value={typeForm.button}
+            />
+          </div>
+        ) : (
+          ''
+        )}
       </form>
     </div>
   );

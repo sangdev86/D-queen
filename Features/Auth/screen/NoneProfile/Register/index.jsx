@@ -33,7 +33,7 @@ export default function Register() {
     fetchMainAction: TYPE_PRODUCT_DETAIL.getProductDetail()
   };
   return (
-    <div id="register">
+    <div id="register" className="cs-modal-auth">
       <Form {...propsForm} />
       <div
         className="navigation"

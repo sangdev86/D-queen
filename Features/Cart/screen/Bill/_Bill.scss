@@ -1,0 +1,62 @@
+#bill {
+  h5 {
+    font-size: 2rem;
+    color: var(--color-primary-dark);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .list-bill {
+    width: 50%;
+    .bill-item-wrapper {
+      .bill-item {
+        font-size: 1.4rem;
+        display: grid;
+        grid-template-columns: 10% 50% 20% 20%;
+        padding: 1rem;
+        &.bill-head {
+          font-weight: 600;
+          background-color: var(--color-primary-light);
+        }
+        .stt {
+          text-align: center;
+        }
+        .title {
+          font-weight: 600;
+        }
+        .amount {
+          text-align: center;
+        }
+        .sale {
+        }
+      }
+    }
+  }
+  .infomation-user {
+    width: 30%;
+  }
+  .total {
+    width: 80%;
+    .total-wrapper {
+      display: flex;
+      justify-content: flex-end;
+
+      .total-item-wrapper {
+        li {
+          display: flex;
+          font-size: 1.6rem;
+          margin: 0.3rem 0;
+          .total-left {
+            margin-right: 0.5rem;
+          }
+        }
+      }
+    }
+
+    .confirm {
+      display: flex;
+      justify-content: space-between;
+      margin: 1rem;
+    }
+  }
+}

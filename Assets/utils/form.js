@@ -13,7 +13,7 @@ export const converLabel = (key) => {
     case 'gender':
       return 'Giới tính';
     case 'username':
-      return 'Số điện thoại';
+      return 'Tên';
     case 'email':
       return 'Email';
     case 'address':

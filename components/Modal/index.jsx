@@ -15,17 +15,16 @@ export default function Modal() {
       document.body.style.overflow = 'unset';
     }
   }, [modal.open]);
-
+  const closeModal = () => {
+    dispatch(ACTIONS.modal(false));
+  };
   return (
     <div id="modal">
       {modal.open ? (
         <div className="over-play-wrapper">
           <div className="modal-item">
             {modal.data}
-            <div
-              className="close"
-              onClick={() => dispatch(ACTIONS.modal(false))}
-            >
+            <div className="close" onClick={closeModal}>
               X
             </div>
           </div>

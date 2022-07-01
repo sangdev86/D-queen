@@ -64,5 +64,5 @@ export const checkLogin = () => {
   return LOCAL.getToken() && LOCAL.getUser() ? true : false;
 };
 export const userLogin = () => {
-  return LOCAL.getToken() && LOCAL.getUser() ? LOCAL.getUser() : 'xx';
+  return LOCAL.getToken() && LOCAL.getUser() ? LOCAL.getUser() : null;
 };

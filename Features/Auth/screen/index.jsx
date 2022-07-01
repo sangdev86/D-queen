@@ -1,7 +1,6 @@
-import Cookies from 'js-cookie';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
-import { checkLogin, LOCAL } from '../../../Assets/utils/local';
+import { checkLogin } from '../../../Assets/utils/local';
 import NoneProfile from './NoneProfile';
 import Profile from './Profile';
 
