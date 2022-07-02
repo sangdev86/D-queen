@@ -5,11 +5,6 @@ export default function Loading({ loadingComponent, children }) {
   const loadingPage = useSelector(
     (state) => state.actions.loadingPage
   );
-  React.useEffect(() => {
-    if (loadingComponent || loadingPage) {
-      document.body.style.overflow = 'hidden';
-    }
-  }, [loadingComponent, loadingPage]);
 
   const findByKey = (name) => {
     if (!Array.isArray(children)) return children;
