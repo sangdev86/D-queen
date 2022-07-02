@@ -6,8 +6,10 @@ export default function Loading({ loadingComponent, children }) {
     (state) => state.actions.loadingPage
   );
   React.useEffect(() => {
-    document.body.style.overflow = 'hidden';
-  }, []);
+    if (loadingComponent || loadingPage) {
+      document.body.style.overflow = 'hidden';
+    }
+  }, [loadingComponent, loadingPage]);
 
   const findByKey = (name) => {
     if (!Array.isArray(children)) return children;
