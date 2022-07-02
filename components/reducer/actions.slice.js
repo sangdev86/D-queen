@@ -9,7 +9,8 @@ export const actionState = {
   },
   modal: { open: false, data: null },
   currentLanguage: 'vie',
-  typeNoneLogin: 'LOGIN'
+  typeNoneLogin: 'LOGIN',
+  loadingPage: false
 };
 export const actionSlice = createSlice({
   name: 'ACTIONS',
@@ -42,6 +43,11 @@ export const actionSlice = createSlice({
     CHANGETYPE: (state, action) => {
       if (action.payload !== undefined) {
         state.typeNoneLogin = action.payload;
+      }
+    },
+    LOADINGPAGE: (state, action) => {
+      if (action.payload !== undefined) {
+        state.loadingPage = action.payload;
       }
     }
   }

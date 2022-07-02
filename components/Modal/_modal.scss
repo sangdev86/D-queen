@@ -11,7 +11,7 @@
     cursor: pointer;
 
     .modal-item {
-      @include absCenter();
+      @include positionNoHeader();
       width: 90%;
     }
     .close {

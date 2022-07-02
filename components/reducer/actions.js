@@ -1,7 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { actionSlice } from './actions.slice';
 
-const { NOTIFICATION, MODAL, CHANGETYPE } = actionSlice.actions;
+const { NOTIFICATION, MODAL, CHANGETYPE, LOADINGPAGE } =
+  actionSlice.actions;
 
 export const ACTIONS = {
   ntf:
@@ -22,7 +23,9 @@ export const ACTIONS = {
 
   changeTypeNoneLogin: (type) => (dispatch) =>
     dispatch(CHANGETYPE(type)),
+  loadingPage: (agr) => (dispatch) => dispatch(LOADINGPAGE(agr)),
 
+  // Async action
   createAction: (action) =>
     createAsyncThunk(action.type, (payload) => {
       return payload;

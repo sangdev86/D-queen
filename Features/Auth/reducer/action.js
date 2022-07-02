@@ -7,14 +7,14 @@ export const TYPE_AUTH = {
     type: 'AUTH/register',
     api: (body) => {
       // console.log('body register', body);
-      return api.fetchData('/users/register', 'POST', body);
+      return api.fetchData('/register', 'POST', body);
     }
   }),
   login: ACTIONS.post({
     type: 'AUTH/login',
     api: (body) => {
-      // console.log('body', body);
-      return api.fetchData('/users/login', 'POST', body);
+      console.log('body', body);
+      return api.fetchData('/login', 'POST', body);
     }
   }),
   logout: (dispatch) => {

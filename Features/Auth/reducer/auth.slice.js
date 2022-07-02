@@ -10,7 +10,7 @@ const { login } = TYPE_AUTH;
 export const authState = {
   isLogin: checkLogin(),
   userLogin: userLogin(),
-  loading: false
+  loadingLogin: false
 };
 
 export const authSlice = createSlice({
@@ -25,17 +25,17 @@ export const authSlice = createSlice({
   },
   extraReducers: {
     [login.pending]: (state) => {
-      state.loading = true;
+      state.loadingLogin = true;
     },
     [login.fulfilled]: (state, action) => {
       state.isLogin = true;
       state.userLogin = action.payload.user;
-      state.loading = false;
+      state.loadingLogin = false;
       LOCAL.setToken(action.payload.token);
       LOCAL.setUser(action.payload.user);
     },
     [login.rejected]: (state) => {
-      state.loading = false;
+      state.loadingLogin = false;
     }
   }
 });

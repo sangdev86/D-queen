@@ -11,11 +11,13 @@
   left: $left;
   transform: translate(-$left, -$top);
 }
-@mixin positionCs($top, $left) {
-  position: absolute;
-  top: $top;
-  left: $left;
-  transform: translate(-$left, -$top);
+
+@mixin positionNoHeader() {
+  position: fixed;
+  top: $height-header;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 999;
 }
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {

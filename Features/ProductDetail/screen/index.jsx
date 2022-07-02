@@ -1,16 +1,18 @@
 import React, { Fragment } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { convertVND } from '../../../Assets/utils/convertMoney';
 import Carousel from '../../../components/Carousel';
 import Price from '../../../components/Price';
+import { ACTIONS } from '../../../components/reducer/actions';
 import SaleTime from '../../../components/SaleTime';
 import FeedBack from '../../Home/screen/FeedBack';
 
 export default function ProductDetail() {
   const product = useSelector((state) => state.productDetail.product);
   const [amount, setAmount] = React.useState(1);
-
+  const dispatch = useDispatch();
   React.useEffect(() => {
+    dispatch(ACTIONS.loadingPage(false));
     console.log('loadng', product);
   }, []);
   const api = {

@@ -53,6 +53,7 @@ class MyApp extends App {
         };
       }
   );
+
   componentDidMount() {
     document
       .getElementsByTagName('HTML')[0]
@@ -64,6 +65,7 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps } = this.props;
+    console.log('app');
 
     return <Layout props={<Component {...pageProps} />} />;
   }
