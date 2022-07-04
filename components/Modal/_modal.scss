@@ -1,5 +1,6 @@
 #modal {
   position: relative;
+
   .over-play-wrapper {
     position: fixed;
     top: 0;
@@ -30,5 +31,14 @@
       //   @include position(90%, 95%);
       // }
     }
+  }
+  .title-layout-modal {
+    font-weight: 400;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: var(--color-primary-dark);
+    text-align: center;
+    letter-spacing: 0.2rem;
   }
 }

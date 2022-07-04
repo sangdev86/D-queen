@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { getAddressVN, setAddressVN } from '../../Assets/utils/local';
 
 export const actionState = {
   notification: {
@@ -10,7 +11,8 @@ export const actionState = {
   modal: { open: false, data: null },
   currentLanguage: 'vie',
   typeNoneLogin: 'LOGIN',
-  loadingPage: false
+  loadingPage: false,
+  allAddressVN: getAddressVN()
 };
 export const actionSlice = createSlice({
   name: 'ACTIONS',
@@ -49,6 +51,12 @@ export const actionSlice = createSlice({
       if (action.payload !== undefined) {
         state.loadingPage = action.payload;
       }
+    }
+  },
+  extraReducers: {
+    ['ACTION/getAllAddress/fulfilled']: (state, action) => {
+      state.allAddressVN = action.payload;
+      setAddressVN(action.payload);
     }
   }
 });

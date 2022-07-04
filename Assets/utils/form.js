@@ -1,7 +1,5 @@
 export const converLabel = (key) => {
   switch (key) {
-    case 'account':
-      return 'Tài Khoản';
     case 'password':
       return 'Mật Khẩu';
     case 'fullName':
@@ -13,11 +11,23 @@ export const converLabel = (key) => {
     case 'gender':
       return 'Giới tính';
     case 'username':
-      return 'Tên';
+      return 'Tài khoản';
     case 'email':
       return 'Email';
     case 'address':
       return 'Địa chỉ';
+    case 'receiver':
+      return 'Tên người nhận';
+    case 'receiverPhone':
+      return 'Số điện thoại';
+    case 'provinceCode':
+      return 'Tỉnh/Thành Phố';
+    case 'districtCode':
+      return 'Quận/Huyện';
+    case 'wardCode':
+      return 'Phường xã';
+    case 'detail':
+      return 'Số ,Tên Đường';
     default:
       break;
   }

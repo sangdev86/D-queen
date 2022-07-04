@@ -1,0 +1,83 @@
+#profile {
+  .profile-info {
+    // width: 50%;
+  }
+  .profile-address {
+    padding: 4rem 2rem;
+
+    .address-content {
+      display: flex;
+      justify-content: center;
+      .wrapper-address {
+        .address-item {
+          display: flex;
+          margin: 10px 0;
+          padding: 0.5rem;
+          border: 1px solid var(--color-grey-light);
+          border-radius: 5px;
+          text-transform: capitalize;
+          &:hover {
+            box-shadow: var(--box-shadow-dark);
+          }
+          .address-info {
+            display: flex;
+            flex-direction: column;
+
+            width: 93%;
+            padding: 5px;
+
+            .receiver {
+              font-size: 1.4rem;
+              padding: 0.2rem 0;
+              font-weight: 600;
+            }
+            .receiverPhone {
+              font-size: 1.2rem;
+              padding: 0.2rem 0;
+            }
+            .fullAddress {
+              font-size: 1.2rem;
+              padding: 0.2rem 0;
+            }
+            .del-address {
+              margin: 0.8rem 0;
+              span {
+                padding: 0.5rem;
+                background-color: red;
+                color: white;
+                font-weight: 600;
+                cursor: pointer;
+              }
+            }
+          }
+          .address-action {
+            width: 7%;
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            border-radius: 8px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            &:hover {
+              box-shadow: var(--box-shadow-dark);
+            }
+          }
+        }
+        .add-address {
+          border: 1px solid var(--color-primary-dark);
+          padding: 1rem;
+          text-align: center;
+          font-size: 1.4rem;
+          font-weight: 600;
+          border-radius: 8px;
+          &:hover {
+            box-shadow: var(--box-shadow-dark);
+          }
+        }
+      }
+    }
+  }
+}

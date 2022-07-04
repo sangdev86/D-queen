@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { LOCAL } from '../Assets/utils/local';
 
 class Api {
   needLoginAgainSubscribers = [];
@@ -53,12 +54,11 @@ class Api {
         options.headers['Authorization'] = this.token;
       }
 
-      // if (getUser()) {
-      //   const { AccessToken, ClientId } = getUser();
-      //   options.headers['Client'] = ClientId;
-      //   options.headers['X-Auth-Token'] = AccessToken;
-      // }
-
+      if (LOCAL.getToken()) {
+        options.headers['Authorization'] =
+          'Bearer ' + LOCAL.getToken().accessToken;
+      }
+      // console.log('option', options);
       try {
         const response = await axios(api, options);
         // console.log('RES', response);

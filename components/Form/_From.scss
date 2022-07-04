@@ -70,6 +70,27 @@
     font-size: var(--normal-font-size);
     transition: 0.3s;
   }
+  select {
+    option {
+      font-size: 1rem;
+    }
+    &::-webkit-scrollbar-track {
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      background-color: rgba(224, 224, 224, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      padding-left: 20px;
+      border-radius: 10px;
+      width: 2px;
+      background-color: rgba(224, 224, 224, 0.801);
+      height: 101px !important;
+    }
+  }
   .button-submit {
     text-align: center;
     .form-button {
