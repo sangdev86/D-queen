@@ -4,20 +4,16 @@ import { LOCAL } from '../../../../Assets/utils/local';
 import { TYPE } from '../../../../Assets/utils/type';
 import Address from '../../../../components/Address';
 import Form from '../../../../components/Form';
+import Loading from '../../../../components/Loading';
 import { TYPE_AUTH } from '../../reducer/action';
 
 export default function Profile() {
+  console.log('Loading comoponet: AUTH/Profile');
   const userLogin = useSelector((state) => state.auth.userLogin);
+  const loadingAuth = useSelector((state) => state.auth.loadingAuth);
   const dispatch = useDispatch();
   const addressUser = useSelector((state) => state.auth.addressUser);
   const [type, setType] = useState('');
-
-  // get all adress
-  useEffect(() => {
-    if (addressUser.length === 0 && userLogin && LOCAL.getToken()) {
-      dispatch(TYPE_AUTH.getAllAdrressUserbyUser());
-    }
-  }, []);
 
   //scroll
 
@@ -98,72 +94,74 @@ export default function Profile() {
   };
 
   return (
-    <div
-      id="profile"
-      className="cs-modal-auth-scroll"
-      ref={profileEl}
-    >
-      <div className="profile-info">
-        <Form {...propsForm} />
-        <div
-          className="navigation"
-          onClick={() =>
-            dispatch(
-              TYPE_AUTH.logout({
-                refreshToken: LOCAL.getToken().refreshToken
-              })
-            )
-          }
-        >
-          Đăng xuất
+    <Loading loadingComponent={loadingAuth}>
+      <div
+        id="profile"
+        className="cs-modal-auth-scroll"
+        ref={profileEl}
+      >
+        <div className="profile-info">
+          <Form {...propsForm} />
+          <div
+            className="navigation"
+            onClick={() =>
+              dispatch(
+                TYPE_AUTH.logout({
+                  refreshToken: LOCAL.getToken()
+                })
+              )
+            }
+          >
+            Đăng xuất
+          </div>
         </div>
-      </div>
-      <div className="profile-address">
-        <h5 className="title-layout-modal">THÔNG TIN ĐỊA CHỈ</h5>
-        <div className="address-content">
-          <ul className="wrapper-address">
-            {addressUser.map(
-              (
-                { receiver, receiverPhone, fullAddress, _id },
-                index
-              ) => {
-                return (
-                  <li key={index} className="address-item">
-                    <div className="address-info">
-                      <span className="receiver">{receiver}</span>
-                      <span className="receiverPhone">
-                        {receiverPhone}
-                      </span>
-                      <span className="fullAddress">
-                        {fullAddress}
-                      </span>
-                      <div className="del-address">
-                        <span
-                          onClick={() =>
-                            dispatch(TYPE_AUTH.delAddress(_id))
-                          }
-                        >
-                          Xóa
+        <div className="profile-address">
+          <h5 className="title-layout-modal">THÔNG TIN ĐỊA CHỈ</h5>
+          <div className="address-content">
+            <ul className="wrapper-address">
+              {addressUser.map(
+                (
+                  { receiver, receiverPhone, fullAddress, _id },
+                  index
+                ) => {
+                  return (
+                    <li key={index} className="address-item">
+                      <div className="address-info">
+                        <span className="receiver">{receiver}</span>
+                        <span className="receiverPhone">
+                          {receiverPhone}
                         </span>
+                        <span className="fullAddress">
+                          {fullAddress}
+                        </span>
+                        <div className="del-address">
+                          <span
+                            onClick={() =>
+                              dispatch(TYPE_AUTH.delAddress(_id))
+                            }
+                          >
+                            Xóa
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                    <div className="address-action">
-                      <span>Sửa</span>
-                    </div>
-                  </li>
-                );
-              }
-            )}
-            <li
-              className="add-address"
-              onClick={() => setType(TYPE.ADD)}
-            >
-              + Thêm địa chỉ
-            </li>
-          </ul>
+                      <div className="address-action">
+                        <span>Sửa</span>
+                      </div>
+                    </li>
+                  );
+                }
+              )}
+              <li
+                className="add-address"
+                onClick={() => setType(TYPE.ADD)}
+              >
+                + Thêm địa chỉ
+              </li>
+            </ul>
+          </div>
+          <div className="address-new">{renderFormAddress()}</div>
         </div>
-        <div className="address-new">{renderFormAddress()}</div>
       </div>
-    </div>
+    </Loading>
   );
 }

@@ -1,31 +1,28 @@
-import React, { useRef, useState } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { checkLogin } from '../../../Assets/utils/local';
-import { viewportToPixels } from '../../../Assets/utils/viewportToPixels';
-import Loading from '../../../components/Loading';
+import { TYPE_AUTH } from '../reducer/action';
 import NoneProfile from './NoneProfile';
 import Profile from './Profile';
 
 export default function Auth() {
+  console.log('Loading comoponent: AUTH');
+
   const isLogin = useSelector((state) => state.auth.isLogin);
-  const loadingAuth = useSelector((state) => state.auth.loadingAuth);
-  const authWrapper = useRef();
 
-  const [scroll, setScroll] = useState('none-scroll');
+  const dispatch = useDispatch();
+
   React.useEffect(() => {
-    const height = authWrapper.current.offsetHeight;
-
-    if (Math.abs(height - viewportToPixels('80vh')) <= 2) {
+    if (isLogin) {
+      dispatch(TYPE_AUTH.getAllAdrressUserbyUser());
     }
   }, []);
 
   return (
-    <Loading loadingComponent={loadingAuth}>
-      <div id="auth" key="item">
-        <div className="auth-wrapper" ref={authWrapper}>
-          {isLogin && checkLogin() ? <Profile /> : <NoneProfile />}
-        </div>
+    <div id="auth" key="item">
+      <div className="auth-wrapper">
+        {isLogin && checkLogin() ? <Profile /> : <NoneProfile />}
       </div>
-    </Loading>
+    </div>
   );
 }

@@ -1,10 +1,12 @@
-import { getCookie, setCookies } from 'cookies-next';
-import Cookies from 'js-cookie';
+import { getCookie, setCookies, removeCookies } from 'cookies-next';
 
 export const LOCAL = {
-  setToken: (data) => setCookies('token', JSON.stringify(data)),
-  getToken: () => {
-    const token = getCookie('token');
+  setToken: ({ accessToken, refreshToken }) => {
+    setCookies('accessToken', JSON.stringify(accessToken));
+    setCookies('refreshToken', JSON.stringify(refreshToken));
+  },
+  getAccessToken: () => {
+    const token = getCookie('accessToken');
     if (token) {
       try {
         return JSON.parse(token);
@@ -14,7 +16,21 @@ export const LOCAL = {
     }
     return null;
   },
-  removeToken: () => Cookies.remove('token'),
+  getToken: () => {
+    const token = getCookie('refreshToken');
+    if (token) {
+      try {
+        return JSON.parse(token);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    return null;
+  },
+  removeToken: () => {
+    removeCookies('accessToken');
+    removeCookies('refreshToken');
+  },
   setUser: (data) => {
     return setCookies('user', JSON.stringify(data));
     // if (typeof window === 'undefined') return;
@@ -34,8 +50,9 @@ export const LOCAL = {
     // localStorage.getItem('user');
   },
   logout: () => {
-    Cookies.remove('token');
-    Cookies.remove('user');
+    removeCookies('accessToken');
+    removeCookies('refreshToken');
+    removeCookies('user');
   }
 };
 export const setAddressVN = (data) => {

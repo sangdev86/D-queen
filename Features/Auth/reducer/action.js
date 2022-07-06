@@ -1,4 +1,3 @@
-import { LOCAL } from '../../../Assets/utils/local';
 import { ACTIONS } from '../../../components/reducer/actions';
 import api from '../../../services/client';
 

@@ -33,8 +33,7 @@ class Api {
     if (!api.includes(this.host)) {
       api = this.host + api;
     }
-    // console.log('Method: ', method, 'Api', api);
-    // console.log('Body', body);
+
     try {
       const options = {
         method,
@@ -47,16 +46,14 @@ class Api {
       if (typeof body === 'string') {
         options.headers['Content-Type'] = 'application/json';
       }
-      // } else if (body instanceof FormData) {
-      //   options.headers['Content-Type'] = 'multipart/form-data';
-      // }
+
       if (this.token) {
         options.headers['Authorization'] = this.token;
       }
 
-      if (LOCAL.getToken()) {
+      if (LOCAL.getAccessToken()) {
         options.headers['Authorization'] =
-          'Bearer ' + LOCAL.getToken().accessToken;
+          'Bearer ' + LOCAL.getAccessToken();
       }
       // console.log('option', options);
       try {
@@ -64,7 +61,7 @@ class Api {
         // console.log('RES', response);
 
         const json = response.data;
-        // console.log('Response of', api, json.data);
+
         if (
           json.status >= 200 &&
           json.status < 300 &&
@@ -78,30 +75,51 @@ class Api {
         }
       } catch (err) {
         if (err.response && err.response.data) {
-          console.log('response of', api, 'error', err.response.data);
           const response = err.response;
-          const json = response.data;
+          const json = await response.data;
+          // console.log(json.data);
           if (
-            json.statusCode === 401 &&
-            json.errors &&
-            json.errors.token === 5000605
-          )
-            return {
-              ...json,
-              code: json.statusCode,
-              success:
-                response.status >= 200 &&
-                response.status < 300 &&
-                json.statusCode >= 200 &&
-                json.statusCode < 300
-            };
+            json.status === 401 &&
+            json.message &&
+            json.message === 'jwt expired'
+          ) {
+            try {
+              const res = await this.fetchData(
+                '/user/refresh-token',
+                'POST',
+                {
+                  refreshToken: await LOCAL.getToken()
+                }
+              );
+              console.log('res refresh', res);
+              if (
+                res &&
+                res !== undefined &&
+                LOCAL.getToken() &&
+                LOCAL.getAccessToken()
+              ) {
+                const { token } = res.data;
+                const { accessToken, refreshToken } = token;
+                LOCAL.setToken({ accessToken, refreshToken });
+                options.headers['Authorization'] =
+                  'Bearer ' + accessToken;
+                return await this.fetchData(
+                  api,
+                  method,
+                  body,
+                  options
+                );
+              }
+            } catch (error) {
+              console.log('error refresh', error);
+            }
+          }
         }
-        console.log('response of', api, 'error', err);
+
         throw err;
       }
     } catch (err) {
-      console.log('Response error: ', api, err);
-      // return { code: -1, errors: err, success: false };
+      console.log(err);
     }
   }
 }

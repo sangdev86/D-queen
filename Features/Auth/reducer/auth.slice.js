@@ -54,9 +54,6 @@ export const authSlice = createSlice({
       state.loadingAuth = false;
     },
     [logout.rejected]: (state) => {
-      LOCAL.logout();
-      state.isLogin = false;
-      state.userLogin = null;
       state.loadingAuth = false;
     },
     [getAllAdrressUserbyUser.pending]: (state) => {
@@ -69,16 +66,16 @@ export const authSlice = createSlice({
     [getAllAdrressUserbyUser.rejected]: (state) => {
       state.loadingAuth = false;
       state.addressUser = [];
+    },
+    [addNewAddressbyUser.pending]: (state) => {
+      state.loadingAuth = true;
+    },
+    [addNewAddressbyUser.fulfilled]: (state) => {
+      state.loadingAuth = false;
+    },
+    [addNewAddressbyUser.rejected]: (state) => {
+      state.loadingAuth = false;
     }
-    // [addNewAddressbyUser.pending]: (state) => {
-    //   state.loadingAuth = true;
-    // },
-    // [addNewAddressbyUser.fulfilled]: (state) => {
-    //   state.loadingAuth = false;
-    // },
-    // [addNewAddressbyUser.rejected]: (state) => {
-    //   state.loadingAuth = false;
-    // },
     // [delAddress.pending]: (state) => {
     //   state.loadingAuth = true;
     // },

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Form from '../../../components/Form';
 import Auth from '../../../Features/Auth/screen';
 import Cart from '../../../Features/Cart/screen';
 import { TYPE_MODAL } from './infomationData';
 
 export default function Infomation({ typeModal }) {
+  console.log('Loading Component: Header/Infomation');
   const { INFO, CART } = TYPE_MODAL;
   const [type, setType] = useState(typeModal);
   const checkActive = (typeItem) => {
