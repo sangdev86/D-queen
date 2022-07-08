@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { FaTiktok } from 'react-icons/fa';
 
 export default function Footer() {
+  console.log('Loading component: FOOTER');
   return (
     <footer id="footer">
       <section id="contact" className="footer-item">

@@ -1,41 +1,46 @@
 import { createSlice } from '@reduxjs/toolkit';
-
 import { TYPE_PRODUCT_DETAIL } from './actions';
 
-const { getProductDetail } = TYPE_PRODUCT_DETAIL;
+const { getProductDetail, getProduct } = TYPE_PRODUCT_DETAIL;
 export const productDetailState = {
   loading: false,
-  product: null
+  product: null,
+  productDetail: {
+    images: null,
+    category: '',
+    description: [],
+    ingredient: [],
+    sale: '',
+    name: '',
+    uses: '',
+    lastest: false,
+    price: 0,
+    saleTime: 0,
+    impressive: [],
+    youtube: {}
+  }
 };
 
 export const productDetailSlice = createSlice({
   name: 'PRODUCTDETAIL',
   initialState: productDetailState,
-  reducers: {
-    // FETCHPRODUCT: (state, action) => {
-    //   console.log('FETCHPRODUCT');
-    //   state.product = action.payload;
-    // }
-  },
+  reducers: {},
   extraReducers: {
-    // const { getProductDetail } = TYPE_PRODUCT_DETAIL;
-    // const { get } = ACTIONS;
-    // builder
-    //   .addCase(get(getProductDetail).pending, (state) => {
-    //     state.loading = true;
-    //   })
-    //   .addCase(get(getProductDetail).fulfilled, (state) => {
-    //     state.loading = false;
-    //     state.product = action.payload;
-    //   })
-    //   .addCase(get(getProductDetail).rejected, (state) => {
-    //     state.loading = false;
-    //   });
+    // [getProduct.pending]: (state) => {
+    //   state.loading = true;
+    // },
+    // [getProduct.fulfilled]: (state, action) => {
+    //   state.product = action.payload;
+    //   state.loading = false;
+    // },
+    // [getProduct.rejected]: (state) => {
+    //   state.loading = false;
+    // },
     [getProductDetail.pending]: (state) => {
       state.loading = true;
     },
     [getProductDetail.fulfilled]: (state, action) => {
-      state.product = action.payload;
+      state.productDetail = action.payload;
       state.loading = false;
     },
     [getProductDetail.rejected]: (state) => {

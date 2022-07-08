@@ -1,6 +1,8 @@
 import React from 'react';
 import { GiChestnutLeaf } from 'react-icons/gi';
+import { useDispatch } from 'react-redux';
 import ListCard from '../../../../components/ListCard';
+import { TYPE_HOME } from '../../reducer/actions';
 export default function ListProduct() {
   return (
     <div id="list-product" className="custom">

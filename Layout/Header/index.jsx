@@ -12,6 +12,7 @@ import { TYPE_MODAL } from './Infomation/infomationData';
 import { FaOpencart } from 'react-icons/fa';
 
 export default function Header() {
+  console.log('Loading component: Header');
   const dispatch = useDispatch();
   // const isLogin = useSelector((state) => state.auth.isLogin);
   // const userLogin = useSelector((state) => state.auth.userLogin);

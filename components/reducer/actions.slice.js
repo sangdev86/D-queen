@@ -12,7 +12,7 @@ export const actionState = {
   currentLanguage: 'vie',
   typeNoneLogin: 'LOGIN',
   loadingPage: false,
-  allAddressVN: getAddressVN()
+  allAddressVN: null
 };
 export const actionSlice = createSlice({
   name: 'ACTIONS',

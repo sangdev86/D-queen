@@ -6,25 +6,16 @@ import Price from '../Price';
 import { ACTIONS } from '../reducer/actions';
 export default function Card(props) {
   const dispatch = useDispatch();
-  const {
-    id,
-    title,
-    description,
-    impressive,
-    image,
-    price,
-    sale,
-    saleTime,
-    index
-  } = props;
+  const { _id, name, impressive, images, price, sale, saleTime } =
+    props;
 
   return (
     <div className="card wrapper-carousel-item">
       <div className="wrapper-card">
         <div className="top-card">
-          <Link href={`/product/${id}`}>
+          <Link href={`/product/${_id ? _id : ''}`}>
             <img
-              src={image[0].src}
+              src={images ? images[0].src : ''}
               alt="title"
               onClick={() => dispatch(ACTIONS.loadingPage(true))}
             />
@@ -35,7 +26,11 @@ export default function Card(props) {
             className="title"
             onClick={() => dispatch(ACTIONS.loadingPage(true))}
           >
-            <Link href={`/product/${id}`}>{title}</Link>
+            {_id ? (
+              <Link href={`/product/${_id ? _id : ''}`}>{name}</Link>
+            ) : (
+              ''
+            )}
           </h4>
           <span className="star">
             <AiFillStar />

@@ -7,8 +7,9 @@ import { ACTIONS } from '../../../components/reducer/actions';
 export default function Navigation() {
   const router = useRouter();
   const dispatch = useDispatch();
+
   const active = (href) => {
-    if (router.pathname === href) return ' active';
+    if (router.asPath === href) return ' active';
     return '';
   };
   return (
@@ -17,22 +18,32 @@ export default function Navigation() {
         {[
           { title: 'Trang chủ', href: '/' },
           // { title: 'Giới thiệu', href: '/about' },
-          { title: 'Sản Phẩm', href: '/products' },
-          { title: 'Góc làm đẹp', href: '/make-beauty' },
-          { title: 'Đại lý', href: '/dealer' }
+          { title: 'Sản Phẩm', href: '/product' }
+          // { title: 'Góc làm đẹp', href: '/make-beauty' },
+          // { title: 'Đại lý', href: '/dealer' }
         ].map((el, index) => (
           <li
             key={index}
             className={`navigation-item ${active(el.href)}`}
             onClick={() => dispatch(ACTIONS.loadingPage(true))}
           >
-            <Link href={el.href}>
+            <Link href={el.href} prefetch={false}>
               <a onClick={() => dispatch(ACTIONS.loadingPage(true))}>
                 {el.title}
               </a>
             </Link>
           </li>
         ))}
+        <li
+          className={`navigation-item ${active('/admin')}`}
+          onClick={() => dispatch(ACTIONS.loadingPage(true))}
+        >
+          <Link href="/admin" prefetch={false}>
+            <a onClick={() => dispatch(ACTIONS.loadingPage(true))}>
+              Quản trị
+            </a>
+          </Link>
+        </li>
       </ul>
     </div>
   );
