@@ -31,7 +31,7 @@ export default function ProductDetail() {
     impressive,
     youtube
   } = productDetail;
-  console.log('productDetail', productDetail);
+
   const handleOnChange = (e) => {
     const { value } = e.target;
     if (isNaN(value)) return;
