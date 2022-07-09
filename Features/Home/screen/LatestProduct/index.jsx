@@ -8,14 +8,11 @@ export default function LatestProduct() {
           <h2>
             Ra mắt <br /> Sản phẩm mới nhất
             <br />
-            <span> Kem trị nám tàn nhan</span>
+            <span> Kem trị nám, tàn nhan</span>
           </h2>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Quaerat adipisci laudantium velit sint consequuntur
-            tenetur? Soluta, quaerat dolor enim, id libero magnam
-            facere, ab eos voluptatum dignissimos magni optio
-            explicabo.
+            Dòng sản phẩm mới với tên gọi là kem đã năng, hỗ trợ trị
+            nám sau 1 tháng sử dụng sẽ thấy sự khác biệt
           </p>
         </div>
         <div className="right">

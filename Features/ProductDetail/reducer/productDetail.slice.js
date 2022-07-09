@@ -5,20 +5,7 @@ const { getProductDetail, getProduct } = TYPE_PRODUCT_DETAIL;
 export const productDetailState = {
   loading: false,
   product: null,
-  productDetail: {
-    images: null,
-    category: '',
-    description: [],
-    ingredient: [],
-    sale: '',
-    name: '',
-    uses: '',
-    lastest: false,
-    price: 0,
-    saleTime: 0,
-    impressive: [],
-    youtube: {}
-  }
+  productDetail: null
 };
 
 export const productDetailSlice = createSlice({

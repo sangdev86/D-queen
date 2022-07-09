@@ -31,6 +31,7 @@ export default function ProductDetail() {
     impressive,
     youtube
   } = productDetail;
+  console.log('productDetail', productDetail);
   const handleOnChange = (e) => {
     const { value } = e.target;
     if (isNaN(value)) return;
@@ -38,7 +39,7 @@ export default function ProductDetail() {
   };
   return (
     <div id="productDetail">
-      {images && youtube ? (
+      {productDetail !== null && productDetail !== undefined ? (
         <div className="container">
           <div id="product-detail">
             <div className="left">
