@@ -28,6 +28,17 @@ export const converLabel = (key) => {
       return 'Phường xã';
     case 'detail':
       return 'Số ,Tên Đường';
+    case 'images':
+      return 'Hình Ảnh';
+    case 'category':
+      return 'Danh Mục';
+    case 'price':
+      return 'Giá gạch Chân';
+    case 'sale':
+      return 'Giá Thực';
+    case 'lastest':
+      return 'Nhóm Marketing';
+
     default:
       break;
   }

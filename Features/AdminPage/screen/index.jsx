@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { ACTIONS } from '../../../components/reducer/actions';
+// import { TYPE_HOME } from '../../Home/reducer/actions';
 import ProductsManager from './ProductsManager';
 
 export default function AdminPage() {
@@ -39,6 +40,7 @@ export default function AdminPage() {
         {(() => {
           switch (content) {
             case 'Sản Phẩm':
+              // dispatch(TYPE_HOME.getAllProducts());
               return <ProductsManager />;
 
             default:

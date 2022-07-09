@@ -4,19 +4,24 @@
   .navigation-admin {
     margin-right: 200px;
     display: flex;
-    align-items: center;
+    height: calc(100vh - $height-header);
+    background-color: white;
+    position: fixed;
+    box-shadow: var(--box-shadow-dark);
+
     ul {
-      position: fixed;
-      background-color: var(--color-primary-dark);
+      padding: 2rem 0;
+
       li {
         font-size: 1.4rem;
-        color: white;
-        padding: 1rem;
+        color: var(--color-grey-dark);
+        padding: 1.5rem;
         font-weight: 600;
-        border: 1px solid var(--color-primary-light);
       }
       .active {
-        background-color: var(--color-primary-dark);
+        background-color: var(--color-primary);
+        color: white;
+        box-shadow: var(--box-shadow-dark);
       }
     }
   }
