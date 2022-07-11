@@ -42,7 +42,7 @@ export default function Card(props) {
           <ul className="impressive">
             {impressive.map((item, index) => (
               <li key={index} className="impressive-item">
-                {item}
+                <div> {item}</div>
               </li>
             ))}
           </ul>

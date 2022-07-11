@@ -51,13 +51,15 @@ export default function ProductDetail() {
                 <Fragment>
                   {images !== null
                     ? images.map((item, index) => (
-                        <img
-                          key={index}
-                          src={item.src}
-                          alt={item.alt}
-                          width={550}
-                          height={370}
-                        />
+                        <div className="wrapper-img-product-detail-page">
+                          <img
+                            key={index}
+                            src={item.src}
+                            alt={item.alt}
+                            width={550}
+                            height={370}
+                          />
+                        </div>
                       ))
                     : ''}
                 </Fragment>

@@ -74,6 +74,9 @@ export const getAddressVN = () => {
 };
 
 export const checkLogin = () => {
+  // if (LOCAL.getToken() && LOCAL.getUser()) {
+  //   console.log(true);
+  // }
   return LOCAL.getToken() && LOCAL.getUser() ? true : false;
 };
 export const userLogin = () => {

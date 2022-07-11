@@ -28,6 +28,10 @@ export const authSlice = createSlice({
       LOCAL.logout();
       state.isLogin = false;
       state.userLogin = null;
+    },
+    FETCH_LOGIN: (state) => {
+      state.isLogin = true;
+      state.userLogin = userLogin();
     }
   },
   extraReducers: {

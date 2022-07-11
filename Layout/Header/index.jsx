@@ -10,6 +10,8 @@ import { ACTIONS } from '../../components/reducer/actions';
 import Infomation from './Infomation';
 import { TYPE_MODAL } from './Infomation/infomationData';
 import { FaOpencart } from 'react-icons/fa';
+import { LOCAL } from '../../Assets/utils/local';
+import { authSlice } from '../../Features/Auth/reducer/auth.slice';
 
 export default function Header() {
   console.log('Loading component: Header');
@@ -17,6 +19,17 @@ export default function Header() {
   // const isLogin = useSelector((state) => state.auth.isLogin);
   // const userLogin = useSelector((state) => state.auth.userLogin);
 
+  React.useEffect(() => {
+    document
+      .getElementsByTagName('HTML')[0]
+      .setAttribute(
+        'data-theme',
+        localStorage.getItem('theme') || 'one'
+      );
+    if (LOCAL.getAccessToken() && LOCAL.getUser()) {
+      dispatch(authSlice.actions.FETCH_LOGIN());
+    }
+  }, []);
   return (
     <header id="header">
       <div className="container">

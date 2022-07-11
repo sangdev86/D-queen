@@ -3,8 +3,12 @@ import { wrapper } from '../store';
 import '../Assets/styles/main.scss';
 import React from 'react';
 import App from 'next/app';
+import { checkLogin, LOCAL } from '../Assets/utils/local';
+import { TYPE_AUTH } from '../Features/Auth/reducer/action';
+import { authSlice } from '../Features/Auth/reducer/auth.slice';
+import { useDispatch } from 'react-redux';
 
-class MyApp extends App {
+const MyApp = ({ Component, pageProps }) => {
   // getInitialProps = wrapper.getInitialAppProps(
   //   (store) =>
   //     async ({ Component, ctx }) => {
@@ -21,21 +25,19 @@ class MyApp extends App {
   //       };
   //     }
   // );
-
-  componentDidMount() {
+  const dispatch = useDispatch();
+  React.useEffect(() => {
     document
       .getElementsByTagName('HTML')[0]
       .setAttribute(
         'data-theme',
         localStorage.getItem('theme') || 'one'
       );
-  }
+    if (LOCAL.getAccessToken() && LOCAL.getUser()) {
+      dispatch(authSlice.actions.FETCH_LOGIN());
+    }
+  }, []);
 
-  render() {
-    const { Component, pageProps } = this.props;
-    console.log('app');
-
-    return <Layout props={<Component {...pageProps} />} />;
-  }
-}
+  return <Layout props={<Component {...pageProps} />} />;
+};
 export default wrapper.withRedux(MyApp);
