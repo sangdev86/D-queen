@@ -8,7 +8,7 @@ const { NOTIFICATION, MODAL, CHANGETYPE, LOADINGPAGE } =
 
 export const ACTIONS = {
   ntf:
-    (status = null, message = null, ms = 0) =>
+    (status = null, message = null, ms = 5000) =>
     (dispatch) =>
       dispatch(
         NOTIFICATION({

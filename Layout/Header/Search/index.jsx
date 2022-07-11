@@ -8,6 +8,7 @@ export default function Search() {
         type="search"
         className="search input"
         placeholder="Hãy tìm thứ làm bạn cá tính hơn :)"
+        disabled
       />
       <span className="search-icon">
         <FaSearch />

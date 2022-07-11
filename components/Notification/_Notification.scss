@@ -1,0 +1,38 @@
+#notification {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  .wrapper-notification {
+    @include position(0, 50%);
+    padding: 10px;
+    background-color: rgb(250, 250, 250);
+    min-width: 250px;
+    border-radius: 2px;
+    margin: 5px 0;
+    box-shadow: var(--box-shadow-dark);
+    cursor: pointer;
+
+    span {
+      font-weight: 700;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+
+      .content {
+        padding-left: 10px;
+        font-size: 1.5rem;
+        text-transform: capitalize;
+      }
+    }
+    .success {
+      color: green;
+    }
+    .warning {
+      color: var(--color-primary-dark);
+    }
+    .error {
+      color: red;
+    }
+  }
+}

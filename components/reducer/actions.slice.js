@@ -3,10 +3,9 @@ import { getAddressVN, setAddressVN } from '../../Assets/utils/local';
 
 export const actionState = {
   notification: {
-    open: false,
-    status: null, // success|error
+    status: null,
     message: null,
-    ms: 10
+    ms: 5000
   },
   modal: { open: false, data: null },
   currentLanguage: 'vie',
@@ -22,13 +21,12 @@ export const actionSlice = createSlice({
       const { status, message, ms } = action.payload;
       if (message && status) {
         state.notification = {
-          open: true,
           status: status,
           message: message,
           ms: ms
         };
       } else {
-        state.notification.open = false;
+        state.notification.status = false;
       }
     },
     MODAL: (state, action) => {

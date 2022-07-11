@@ -24,22 +24,39 @@ export default function Navigation() {
         {[
           { title: 'Trang chủ', href: '/' },
           // { title: 'Giới thiệu', href: '/about' },
-          { title: 'Sản Phẩm', href: '/product' }
+          { title: 'Sản Phẩm', href: '/product' },
+          // { title: 'Nhà Sáng Lập', id: '#founder' },
+          // { title: 'Giấy chứng nhận', id: '#certificate' },
+          { title: 'Liên hệ', id: '#contact' }
           // { title: 'Góc làm đẹp', href: '/make-beauty' },
           // { title: 'Đại lý', href: '/dealer' }
-        ].map((el, index) => (
-          <li
-            key={index}
-            className={`navigation-item ${active(el.href)}`}
-            onClick={() => dispatch(ACTIONS.loadingPage(true))}
-          >
-            <Link href={el.href} prefetch={false}>
-              <a onClick={() => dispatch(ACTIONS.loadingPage(true))}>
-                {el.title}
-              </a>
-            </Link>
-          </li>
-        ))}
+        ].map((el, index) => {
+          if (el.id) {
+            return (
+              <li
+                key={index}
+                className={`navigation-item ${active(el.href)}`}
+              >
+                <a href={el.id}>{el.title}</a>
+              </li>
+            );
+          }
+          return (
+            <li
+              key={index}
+              className={`navigation-item ${active(el.href)}`}
+              onClick={() => dispatch(ACTIONS.loadingPage(true))}
+            >
+              <Link href={el.href} prefetch={false}>
+                <a
+                  onClick={() => dispatch(ACTIONS.loadingPage(true))}
+                >
+                  {el.title}
+                </a>
+              </Link>
+            </li>
+          );
+        })}
         {isLogin && userLogin?.role?.name === 'admin' ? (
           <li
             className={`navigation-item ${active('/admin')}`}

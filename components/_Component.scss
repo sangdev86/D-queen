@@ -10,8 +10,10 @@
 @import './Loading/Loading';
 @import './Address/Address';
 @import './Table/Table';
+@import './Notification/Notification';
+
 .custom {
-  margin: 8rem 0;
+  padding: 6rem 0;
   overflow: hidden;
   .top-title {
     display: flex;

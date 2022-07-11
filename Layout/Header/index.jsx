@@ -12,6 +12,7 @@ import { TYPE_MODAL } from './Infomation/infomationData';
 import { FaOpencart } from 'react-icons/fa';
 import { LOCAL } from '../../Assets/utils/local';
 import { authSlice } from '../../Features/Auth/reducer/auth.slice';
+import { TYPE_NOTIFICATION } from '../../components/Notification';
 
 export default function Header() {
   console.log('Loading component: Header');
@@ -68,7 +69,7 @@ export default function Header() {
               ) : (
                 ''
               )} */}
-              <li
+              {/* <li
                 className="header-account"
                 onClick={() =>
                   dispatch(
@@ -80,14 +81,20 @@ export default function Header() {
                 }
               >
                 <HeaderAccount />
-              </li>
+              </li> */}
               <li
                 className="header-cart"
                 onClick={() =>
+                  // dispatch(
+                  //   ACTIONS.modal(
+                  //     true,
+                  //     <Infomation typeModal={TYPE_MODAL.CART} />
+                  //   )
+                  // )
                   dispatch(
-                    ACTIONS.modal(
-                      true,
-                      <Infomation typeModal={TYPE_MODAL.CART} />
+                    ACTIONS.ntf(
+                      TYPE_NOTIFICATION.success,
+                      'Hệ Thống Đang nâng cấp !'
                     )
                   )
                 }
